@@ -5001,3 +5001,8 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.e
 
 !ENTRY org.eclipse.ui 2 2 2023-04-05 15:36:47.575
 !MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.eclipse.core.resources 2 2 2023-04-05 15:47:04.555
+!MESSAGE 保存操作の警告。
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2023-04-05 15:47:04.556
+!MESSAGE 'ensyu1_2(2)' のプロジェクト記述ファイル (.project) がありませんでした。 このファイルには、プロジェクトに関する重要な情報が含まれています。 新しいプロジェクト記述ファイルが作成されましたが、プロジェクトに関する情報の一部が破損している可能性があります。
