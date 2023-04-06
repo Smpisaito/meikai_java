@@ -28,19 +28,19 @@ public class ensyu3_4 {
 		// 変数aに値を入力するように文字を表示する。
 		System.out.print("変数a：");
 		// double型の変数aに値を入力する。
-		double a = StandardInput.nextInt();
+		double FirstNumber = StandardInput.nextInt();
 		
 		// 変数bに値を入力するように文字を表示する。
 		System.out.print("変数b：");
 		// double型の変数bに値を入力する。
-		double b = StandardInput.nextInt();
+		double SecondNumber = StandardInput.nextInt();
 		
 		// aの値がbの値より大きかった場合の分岐。
-		if (a > b)
+		if (FirstNumber > SecondNumber)
 			// aの値の方が大きいことを表示する。
 			System.out.println("aのほうが大きいです。");
 		// bの値がaの値より大きかった場合の分岐。
-		else if (b > a)
+		else if (SecondNumber > FirstNumber)
 			// bの方が大きかったことを表示する。
 			System.out.println("bのほうが大きいです。");
 		// それ以外、aとbが等しいときの分岐。
