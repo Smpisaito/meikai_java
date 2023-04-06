@@ -34,7 +34,7 @@ public class ensyu2_1 {
 		// yに正しく数字が代入されていた場合に、yの値を表示する。
 		System.out.println("yの値は" + y + "です。");
 		// xとyに正しく数字が代入されていた場合に、xとyの合計を表示する。
-		System.out.println("合計は" + ( x + y ) "です。");
+		System.out.println("合計は" + ( x + y ) + "です。");
 		// xとyに正しく数字が代入されていた場合に、xとyの平均を小数点以下を切り捨てして表示する。
 		System.out.println("平均は" + ( x + y ) / 2 + "です。");
 		
