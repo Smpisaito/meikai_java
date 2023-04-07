@@ -51,7 +51,7 @@ public class ensyu3_15 {
 		// 変数a(大きいほうの値)を表示する。
 		System.out.println("変数aは" + FirstInteger + "です。");
 		// 変数b(小さいほうの値)を表示する。
-		System.out.println("変数aは" + SecondInteger + "です。");
+		System.out.println("変数bは" + SecondInteger + "です。");
 		
 	}
 
