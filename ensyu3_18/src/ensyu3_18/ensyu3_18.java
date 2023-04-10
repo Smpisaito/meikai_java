@@ -23,17 +23,17 @@ public class ensyu3_18 {
 	public static void main(String[] args) {
 		
 		// キーボードで入力を行うことを指定する。main内で入力を行うコードより前に置く。
-		Scanner StandardInput = new Scanner(System.in);
+		Scanner standardInput = new Scanner(System.in);
 		
 		// 季節を求めることを示す。
 		System.out.println("入力した月の季節を求めます。");
 		// 何月であるかの入力を行うことを示す。
 		System.out.print("月：");
 		// 月の入力を行う。
-		int MonthSeason = StandardInput.nextInt();
+		int monthSeason = standardInput.nextInt();
 		
 		// 月として入力した値による条件分岐。
-		switch ( MonthSeason ) {
+		switch ( monthSeason ) {
 		
 			// 月が3月の時の分岐。
 			case 3:
@@ -42,7 +42,7 @@ public class ensyu3_18 {
 			// 月が5月の時の分岐。
 			case 5:
 				// 季節が春であることを示す。
-				System.out.println( MonthSeason + "月の季節は春です。"); break;
+				System.out.println( monthSeason + "月の季節は春です。"); break;
 				
 			// 月が6月の時の分岐。
 			case 6:
@@ -51,7 +51,7 @@ public class ensyu3_18 {
 			// 月が8月の時の分岐。
 			case 8:
 				// 季節が夏であることを示す。
-				System.out.println( MonthSeason + "月の季節は夏です。"); break;
+				System.out.println( monthSeason + "月の季節は夏です。"); break;
 			
 			// 月が9月の時の分岐。
 			case 9:
@@ -60,7 +60,7 @@ public class ensyu3_18 {
 			// 月が11月の時の分岐。
 			case 11:
 				// 季節が秋であることを示す。
-				System.out.println( MonthSeason + "月の季節は秋です。"); break;
+				System.out.println( monthSeason + "月の季節は秋です。"); break;
 			
 			// 月が12月の時の分岐。
 			case 12:
@@ -69,8 +69,11 @@ public class ensyu3_18 {
 			// 月が2月の時の分岐。
 			case 2:
 				// 季節が冬であることを示す。
-				System.out.println( MonthSeason + "月の季節は冬です。"); break;
-				
+				System.out.println( monthSeason + "月の季節は冬です。"); break;
+			
+			// 1～12以外の整数値が入力された場合の分岐。
+			default:  System.out.println("1～12の中から入力してください。"); break;
+			
 		}
 		
 	}
