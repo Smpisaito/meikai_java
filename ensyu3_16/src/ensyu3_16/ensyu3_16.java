@@ -40,43 +40,46 @@ public class ensyu3_16 {
 		// 三つ目の整数値の入力を行う。
 		int ThirdInteger = StandardInput.nextInt();
 		
-		// 変数aが変数cより大きい場合の分岐
+		// 並び替え用の変数NumberSortを用意する。
+		int NumberSort;
+		
+		// 変数FirstIntegerが変数ThirdIntegerより大きい場合の分岐( FirstInteger ⇔ SecondInteger )。
 		if ( FirstInteger > ThirdInteger ) {
-			// 網掛け部の変数ブロックに変数aの値を入れる。
-			int NumberSort = FirstInteger;
-			// 変数cの値を変数aに代入する。
+			// 並び替え用の変数NumberSortに変数FirstIntegerの値を移しておく。
+			NumberSort = FirstInteger;
+			// 変数ThirdIntegerの値を変数FirstIntegerに代入する。
 			FirstInteger = ThirdInteger;
-			// 網掛け部の変数ブロックに入れた値を変数cに代入する。
+			// 並び替え用の変数NumberSortに移しておいたFirstIntegerの値を変数ThirdIntegerに代入する。
 			ThirdInteger = NumberSort;
 		}
 			
-		// 変数aが変数bより大きい場合の分岐。
+		// 変数FirstIntegerが変数SecondIntegerより大きい場合の分岐( FirstInteger ⇔ ThirdInteger )。
 		if ( FirstInteger > SecondInteger ) {
-			// 網掛け部の変数ブロックに変数aの値を入れる。
-			int NumberSort = FirstInteger;
-			// 二つ目の整数値を一つ目の整数値を入れていた変数aに代入する。
+			// 並び替え用の変数NumberSortに変数FirstIntegerの値を移す。
+			NumberSort = FirstInteger;
+			// 変数SecondIntegerの値を変数FirstIntegerに代入する。
 			FirstInteger = SecondInteger;
-			// 網掛け部の変数ブロックに入れた値を変数bに代入する。
+			// 並び替え用の変数NumberSortに移しておいたFirstIntegerの値を変数SecondIntegerに代入する。
 			SecondInteger = NumberSort;
 		}
 		
-		// 変数bが変数cより大きい場合の分岐
+		// 変数SecondIntegerが変数ThirdIntegerより大きい場合の分岐( SecondInteger ⇔ ThirdInteger )。
 		if ( SecondInteger > ThirdInteger ) {
-			// 網掛け部の変数ブロックに変数aの値を入れる。
-			int NumberSort = SecondInteger;
-			// 変数cの値を変数aに代入する。
+			// 並び替え用の変数NumberSortに変数SecondIntegerの値を移す
+			NumberSort = SecondInteger;
+			// 変数ThirdIntegerの値を変数SecondIntegerに代入する。
 			SecondInteger = ThirdInteger;
-			// 網掛け部の変数ブロックに入れた値を変数cに代入する。
+			// 並び替え用の変数NumberSortに移しておいたSecondIntegerの値を変数ThirdIntegerに代入する。
 			ThirdInteger = NumberSort;
 		}
 		
-		// 変数aとbとcを整数値が昇順(小さい順)に並び替えたことを示す。
-		System.out.println("a≧bになるようにソートしました。");
-		// 変数a(一番小さい値)を表示する。
+		// 入力した三つの整数値を昇順(小さい順)に並び替えたことを示す。
+		System.out.println(" a ≦ b ≦ c　になるようにソートしました。");
+		// 変数FirstInteger(一番小さい値)を表示する。
 		System.out.println("変数aは" + FirstInteger + "です。");
-		// 変数b(中央値)を表示する。
+		// 変数SecondInteger(中央値)を表示する。
 		System.out.println("変数bは" + SecondInteger + "です。");
-		// 変数c(一番大きい値)を表示する。
+		// 変数ThirdInteger(一番大きい値)を表示する。
 		System.out.println("変数cは" + ThirdInteger + "です。");
 		
 	}
