@@ -37,6 +37,7 @@ public class Ensyu4_6 {
 		// 入力した値の回数のループを行う。
 		while ( loopNumber < asteriskNumber ) {
 			System.out.print('*');
+			// 変数loopNumberにインクリメントを行う。
 			loopNumber++;
 		}
 		
