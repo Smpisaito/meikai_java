@@ -26,6 +26,7 @@ public class ensyu4_1 {
 		// 入力をキーボードに指定する。main内で入力操作を行うコードより前に置く。
 		Scanner StandardInput = new Scanner(System.in);
 		
+		// ループに用いる整数値をつくる。初期値は二度目以降と分けるために0を入れる。
 		int RetryNumber = 0;
 		
 		// もう一度行うことを選んだ時に戻るループをつくる
