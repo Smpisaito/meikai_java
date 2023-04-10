@@ -23,35 +23,35 @@ public class ensyu3_15 {
 	public static void main(String[] args){
 		
 		// 入力をキーボードで行うことを示す。main内で入力を行うコードより前に置く。
-		Scanner StandardInput = new Scanner(System.in);
+		Scanner standardInput = new Scanner(System.in);
 		
 		// 整数値の入力を促す。
 		System.out.println("整数を入力してください。");
 		// 一つ目の整数値の入力をすることを示す。
 		System.out.print("変数a：");
 		// 一つ目の整数値の入力を行う。
-		int FirstInteger = StandardInput.nextInt();
+		int firstInteger = standardInput.nextInt();
 		// 二つ目の整数値の入力をすることを示す。
 		System.out.print("変数b：");
 		// 二つ目の整数値の入力を行う。
-		int SecondInteger = StandardInput.nextInt();
+		int secondInteger = standardInput.nextInt();
 		
 		// 一つ目の整数値が二つ目の整数値より小さい場合の分岐。
-		if ( FirstInteger < SecondInteger ) {
-			// 網掛け部の変数ブロックに一つ目の整数値を入れる。
-			int NumberSort = FirstInteger;
-			// 二つ目の整数値を一つ目の整数値を入れていた変数aに代入する。
-			FirstInteger = SecondInteger;
-			// 網掛け部の変数ブロックから一つ目の整数値を二つ目の整数値を入れていた変数bに代入する。
-			SecondInteger = NumberSort;
+		if ( firstInteger < secondInteger ) {
+			// 入れ替え用の変数numberSortに変数firstIntegerに入れられた一つ目の整数値を移す。
+			int numberSort = firstInteger;
+			// 変数secondIntegerに入れられた二つ目の整数値を変数firstIntegerに代入する。
+			firstInteger = secondInteger;
+			// 変数numberSortから一つ目の整数値を変数secondIntegerに代入する。
+			secondInteger = numberSort;
 		}
 		
-		// 変数aとbを整数値が降順(大きい順)に並び替えたことを示す。
-		System.out.println("a≧bになるようにソートしました。");
-		// 変数a(大きいほうの値)を表示する。
-		System.out.println("変数aは" + FirstInteger + "です。");
-		// 変数b(小さいほうの値)を表示する。
-		System.out.println("変数bは" + SecondInteger + "です。");
+		// 二つの変数を整数値が降順(大きい順)に並び替えたことを示す。
+		System.out.println(" a ≧ b になるようにソートしました。");
+		// 変数firstInteger(大きいほうの値)を表示する。
+		System.out.println("変数aは" + firstInteger + "です。");
+		// 変数secondInteger(小さいほうの値)を表示する。
+		System.out.println("変数bは" + secondInteger + "です。");
 		
 	}
 
