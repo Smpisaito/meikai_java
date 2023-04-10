@@ -26,16 +26,16 @@ public class ensyu2_4 {
 		Scanner standardInput = new Scanner(System.in);
 		
 		// 整数値の変数Integerをつくる。
-		int Integer;		
+		int IntegerNumber;		
 		// 整数値の入力を行うことを示すように文字を表示する。
 		System.out.print("整数値：");
 		// 変数Integerにキーボードでの整数値の入力を行う。
-		Integer = standardInput.nextInt();
+		IntegerNumber = standardInput.nextInt();
 		
 		// 入力した値に対して10を加えた値を文字で表示する。
-		System.out.println("10を加えた値は" + (Integer+10) + "です。");
+		System.out.println("10を加えた値は" + (IntegerNumber+10) + "です。");
 		// 入力した値に対して10を減じた値を文字で表示する。
-		System.out.println("10を減じた値は" + (Integer-10) + "です。");
+		System.out.println("10を減じた値は" + (IntegerNumber-10) + "です。");
 		
 	}
 
