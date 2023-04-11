@@ -29,11 +29,13 @@ public class Ensyu4_13 {
 		// これから行うことを示す。
 		System.out.println("1から入力した正の整数値までの和を求める。");
 		
+		// 正の整数値が入力されるまでループする。
 		do {
 			// 整数値の入力を行うことを示す。
 			System.out.print("整数値：");
 			// 整数値の入力を行う。
 			integerNumber = standardInput.nextInt();
+		//入力した値が正ではないときループを行う。
 		} while ( integerNumber<=0 );
 		
 		
