@@ -14,7 +14,7 @@ public class Ensyu4_13 {
 	
 	/*
 	 * 関数名：main
-	 * 概要：入力した整数値から0までの和を求める。
+	 * 概要：入力した整数値から1までの和を求める。
 	 * 引数：なし
 	 * 戻り値：なし
 	 * 作成者：S.Saito
@@ -26,26 +26,27 @@ public class Ensyu4_13 {
 		Scanner standardInput = new Scanner(System.in);
 		// 入力する変数をつくる。
 		int integerNumber;
-		System.out.println("1から入力した整数値までの和を求める。");
-		// 整数値の入力を行うことを示す。
-		System.out.print("整数値：");
-		// 整数値の入力を行う。
-		integerNumber = standardInput.nextInt();
+		// これから行うことを示す。
+		System.out.println("1から入力した正の整数値までの和を求める。");
+		
+		do {
+			// 整数値の入力を行うことを示す。
+			System.out.print("整数値：");
+			// 整数値の入力を行う。
+			integerNumber = standardInput.nextInt();
+		} while ( integerNumber<=0 );
+		
 		
 		// 和を入れる変数sumNumbrを作る。初期値は0にする。
 		int sumNumber =0;
-		// 入力した値が正の時の変数sumNumberに和を入れるためのループをつくる。
-		for(int loopNumber = 0; loopNumber <= integerNumber ;loopNumber++) {
-			// 入力した値から0までの数字を加算する。
+		// 入力した値から1まで変数sumNumberに和を入れるためのループをつくる。
+		for(int loopNumber = 1; loopNumber <= integerNumber ;loopNumber++) {
+			// 入力した値から1までの数字を加算する。
 			sumNumber += loopNumber;
 		}
-		// 入力した値が負の時の変数sumNumberに和を入れるためのループをつくる。
-		for(int loopNumber = 0; loopNumber >= integerNumber; loopNumber--) {
-			// 入力した値から0までの数字を加算する。
-			sumNumber += loopNumber;
-		}
+		
 		// 入力した整数値から0までの和の値を表示する。
-		System.out.println("入力した整数値から0までの和は" + sumNumber + "です。");
+		System.out.println("入力した整数値から1までの和は" + sumNumber + "です。");
 	}
 	
 }
