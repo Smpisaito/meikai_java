@@ -42,13 +42,13 @@ public class Ensyu4_7 {
 			else if (loopNumber % 2 == 0 )
 				// 偶数個の時は「+」を表示する。
 				System.out.print('+');
-			// ループごとに変数loopNumberのインクリエイトを行う。
+			// ループごとに変数loopNumberのインクリメントを行う。
 			loopNumber++;
 		}
 		
 		// ループが発生した場合の分岐。
 		if ( loopNumber > 1)
-			// 改行をループが発生した場合のみ行う。
+			// ループが発生した場合のみ改行を行う。
 			System.out.println("");
 		
 	}
