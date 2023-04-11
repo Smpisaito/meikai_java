@@ -39,6 +39,7 @@ public class Ensyu4_10 {
 		
 		// 入力した値が1以上の時のみ改行を行う。
 		if ( integerNumber > 0 ) {
+			// 改行を行う
 			System.out.println();
 		}
 		
