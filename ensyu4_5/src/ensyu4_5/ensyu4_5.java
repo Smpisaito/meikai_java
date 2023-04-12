@@ -30,7 +30,7 @@ public class ensyu4_5 {
 		System.out.println("カウントダウンをします。");
 		
 		// カウントダウンに用いる変数として元のプログラムのxの代わりの変数integerNumberをつくる。
-		int integerNumber;
+		int integerNumber = 0;
 		
 		// 入力した値が正の整数値になるまでループする。
 		do {
