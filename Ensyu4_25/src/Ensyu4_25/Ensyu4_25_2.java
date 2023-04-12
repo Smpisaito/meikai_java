@@ -5,11 +5,11 @@ package Ensyu4_25;
 import java.util.Scanner;
 
 /*
-* クラス名：Ensyu4_25‗2
-* 概要：演習4-25-2クラス
-* 作成者：S.Saito
-* 作成日：2023.04.12
-*/
+ * クラス名：Ensyu4_25‗2
+ * 概要：演習4-25-2クラス
+ * 作成者：S.Saito
+ * 作成日：2023.04.12
+ */
 public class Ensyu4_25_2 {
 	
 	/*
