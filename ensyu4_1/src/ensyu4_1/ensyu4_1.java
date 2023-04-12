@@ -19,7 +19,7 @@ public class ensyu4_1 {
 	 * 引数：なし
 	 * 戻り値：なし
 	 * 作成者：S.Saito
-	 * 作成日：
+	 * 作成日：2023.04.12
 	 */
 	public static void main(String[] args){
 		
