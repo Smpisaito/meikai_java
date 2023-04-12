@@ -27,6 +27,7 @@ public class Ensyu4_6 {
 		// 入力をキーボードに指定する。main内で入力操作を行うコードより前に置く。
 		Scanner standardInput = new Scanner(System.in);
 		
+		
 		// 入力した値だけ「*」を表示することを示す。
 		System.out.print("何個*を表示しますか：");
 		// 「*」を表示したい数を入力する。
