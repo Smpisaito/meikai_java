@@ -27,9 +27,9 @@ public class Ensyu4_19 {
 		Scanner standardInput = new Scanner(System.in);
 		
 		// 月の入力を行う変数monthNumberをつくる。
-		int monthNumber;
+		int monthNumber = 0;
 		// 再度行うかの確認のための変数retryNumberをつくる。
-		int retryNumber;
+		int retryNumber = 0;
 		// 入力した月から季節を求めるプログラムを繰り返したいだけ繰り返せるようにループをつくる。
 		do {
 			
