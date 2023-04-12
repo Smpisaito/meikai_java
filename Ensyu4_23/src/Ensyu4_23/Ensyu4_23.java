@@ -51,8 +51,8 @@ public class Ensyu4_23 {
 			}
 			// 縦軸の段数の数字を表示するループ。繰り返す回数を1回から縦軸の段数が変わるごと2回ずつ増やしていく。
 			for ( int secondNumber = 1 ; secondNumber < 2*firstNumber ; secondNumber++ )  {
-				// 縦軸の数字を表示する。ループによって繰り返し表示する。
-				System.out.print(firstNumber);
+				// 縦軸の1の位の数字を表示する。ループによって繰り返し表示する。
+				System.out.print( firstNumber % 10 );
 			}
 			// 1段分の出力が終わったら改行を行う。
 			System.out.println();
