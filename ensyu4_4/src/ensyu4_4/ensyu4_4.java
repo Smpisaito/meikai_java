@@ -24,13 +24,13 @@ public class ensyu4_4 {
 	public static void main(String[] args){
 		
 		// 入力をキーボードに指定する。main内で入力操作を行うコードより前に置く。
-		Scanner StandardInput = new Scanner(System.in);
+		Scanner standardInput = new Scanner(System.in);
 		
 		// 後にカウントダウンを行うことを表示する。
 		System.out.println("カウントダウンします。");
 	
 		// 確認に用いる変数xをつくる。
-		int x;
+		int integerNumber;
 		
 		// xに正の整数以外が入力されないようにループにかける。
 		do {
@@ -38,23 +38,23 @@ public class ensyu4_4 {
 			// 正の整数値を入れることを示す。
 			System.out.print("正の整数値：");
 			// 変数xにカウントしたい正の整数値を入れる。
-			x = StandardInput.nextInt();
+			integerNumber = standardInput.nextInt();
 			
 		// もし正の整数以外(0、負の整数値)が変数xに入っていた場合はループする。
-		} while ( x <= 0 );
+		} while ( integerNumber <= 0 );
 		
 		// xに入力した値から0までのカウントダウンが終わるまでループする。
-		while ( x >= 0 ) {
+		while ( integerNumber >= 0 ) {
 			
 			// 変数xの値を表示する。
-			System.out.println(x);
+			System.out.println(integerNumber);
 			// 変数xの値-1する。
-			x--;
+			integerNumber--;
 			
 		}
 		
 		// 変数xの値が-1であることを確認する。
-		System.out.println("\nwhile文終了後の変数xの値：" + x );
+		System.out.println("\nwhile文終了後の変数xの値：" + integerNumber );
 		
 	}
 
