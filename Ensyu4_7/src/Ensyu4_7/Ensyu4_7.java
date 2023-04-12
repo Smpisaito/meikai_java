@@ -25,11 +25,14 @@ public class Ensyu4_7 {
 		// 入力をキーボードに指定する。main内で入力操作を行うコードより前に置く。
 		Scanner standardInput = new Scanner(System.in);
 		
-		// 入力した値だけ「*」を表示することを示す。
-		System.out.print("何個の記号文字を表示しますか：");
-		// 記号文字を表示したい数を入力する。
-		int asteriskNumber = standardInput.nextInt();
-		
+		// 入力するための変数をつくる。
+		int asteriskNumber = 0;
+		do {
+			// 入力した値だけ「*」を表示することを示す。
+			System.out.print("何個の記号文字を表示しますか：");
+			// 記号文字を表示したい数を入力する。
+			asteriskNumber = standardInput.nextInt();
+		} while ( asteriskNumber < 0 );
 		// ループに用いる関数を設定する。
 		int loopNumber = 1 ;
 		// 入力した値の回数のループを行う。
