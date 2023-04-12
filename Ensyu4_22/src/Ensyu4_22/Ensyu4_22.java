@@ -26,7 +26,7 @@ public class Ensyu4_22 {
 		Scanner standardInput = new Scanner(System.in);
 		
 		// 段数を入れる変数をつくる
-		int integerNumber;
+		int integerNumber = 0;
 		// 段数に0以下が入った場合入力しなおすためのループ。
 		do {
 			// 段数の入力を求めるように表示する。
