@@ -25,7 +25,7 @@ public class Ensyu4_22 {
 		// 入力をキーボードに指定する。main内で入力操作を行うコードより前に置く。
 		Scanner standardInput = new Scanner(System.in);
 		
-// 段数を入れる変数をつくる
+		// 段数を入れる変数をつくる
 		int integerNumber;
 		// 段数に0以下が入った場合入力しなおすためのループ。
 		do {
