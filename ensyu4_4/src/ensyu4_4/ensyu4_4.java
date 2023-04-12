@@ -30,27 +30,21 @@ public class ensyu4_4 {
 		System.out.println("カウントダウンします。");
 	
 		// 確認に用いる変数xをつくる。
-		int integerNumber;
-		
+		int integerNumber = 0;
 		// xに正の整数以外が入力されないようにループにかける。
 		do {
-			
 			// 正の整数値を入れることを示す。
 			System.out.print("正の整数値：");
 			// 変数xにカウントしたい正の整数値を入れる。
 			integerNumber = standardInput.nextInt();
-			
-		// もし正の整数以外(0、負の整数値)が変数xに入っていた場合はループする。
+			// もし正の整数以外(0、負の整数値)が変数xに入っていた場合はループする。
 		} while ( integerNumber <= 0 );
-		
 		// xに入力した値から0までのカウントダウンが終わるまでループする。
 		while ( integerNumber >= 0 ) {
-			
 			// 変数xの値を表示する。
 			System.out.println(integerNumber);
 			// 変数xの値-1する。
 			integerNumber--;
-			
 		}
 		
 		// 変数xの値が-1であることを確認する。
