@@ -66,13 +66,19 @@ public class Ensyu4_25 {
 			// 入力した整数値の数を示す変数checkNumberを1増やす。
 			checkNumber++;
 		}
-		
-		// 入力の時の表示と分けるために改行を入れる。
-		System.out.println("");
-		// 合計を表示する。
-		System.out.println("合計：" + sumNumber );
-		// 平均を表示する。
-		System.out.println("平均：" + sumNumber/checkNumber );
+		// 入力が行われた(整数値の入力の一つ目で0が押されて終了しなかった)場合の分岐
+		if (checkNumber >0) {
+			// 入力の時の表示と分けるために改行を入れる。
+			System.out.println("");
+			// 合計を表示する。
+			System.out.println("合計：" + sumNumber );
+			// 平均を表示する。
+			System.out.println("平均：" + sumNumber/checkNumber );
+		// 整数値の入力の一つ目で0が押されて終了した場合の分岐
+		} else {
+			// 整数値の入力が行われていないまま終了したことを示す表示をする。
+			System.out.println("整数値が入力されずに終了しました。");
+		}
 		
 	}
 
