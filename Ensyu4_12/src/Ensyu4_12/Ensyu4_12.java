@@ -27,14 +27,15 @@ public class Ensyu4_12 {
 		
 		// カウントアップを行うことを示す。
 		System.out.println("カウントアップを行います。");
-		int countNumber;
+		// 入力に用いる変数をつくる。
+		int countNumber = 0;
 		// 入力した値が1以上になるまで繰り返す。
 		do {
 			// 正の整数値を入力することを示す。
 			System.out.print("正の整数値：");
 			// 正の整数値の入力を行う。
 			countNumber = standardInput.nextInt();
-			// 入力した値が0以下の条件の時繰り返す。
+		// 入力した値が0以下の条件の時繰り返す。
 		} while (countNumber <= 0);
 		
 		// 変数countNumberが変数loopNumber(0)より小さくなるまで繰り返す。
