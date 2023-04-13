@@ -56,7 +56,7 @@ public class Ensyu4_19 {
 			// 5月の場合
 			case 5:
 				// 3～5月は春であることを示す表示をする。
-				System.out.println("その月の季節は春です。");
+				System.out.println("その月の季節は春です。"); break;
 			// 6月の場合
 			case 6:
 			// 7月の場合	
@@ -64,7 +64,7 @@ public class Ensyu4_19 {
 			// 8月の場合
 			case 8:
 				// 6～8月が夏であることを示す表示をする。
-				System.out.println("その月の季節は夏です。");
+				System.out.println("その月の季節は夏です。"); break;
 			// 9月の場合
 			case 9:
 			// 10月の場合
@@ -72,7 +72,7 @@ public class Ensyu4_19 {
 			// 11月の場合
 			case 11:
 				// 9～11月が秋であることを示す表示をする。
-				System.out.println("その月の季節は秋です。");
+				System.out.println("その月の季節は秋です。"); break;
 			// 12月の場合
 			case 12:
 			// 1月の場合
@@ -80,7 +80,7 @@ public class Ensyu4_19 {
 			// 2月の場合
 			case 2:
 				// 12～2月が冬であることを示す表示をする。
-				System.out.println("その月の季節は冬です。");
+				System.out.println("その月の季節は冬です。"); break;
 			}
 			
 			// もう一度行うかの入力を行う。
