@@ -26,11 +26,11 @@ public class Ensyu4_15 {
 		Scanner standardInput = new Scanner(System.in);
 		
 		// 開始値の変数をつくる。
-		double startNumber;
+		double startNumber = 0;
 		// 終了値の変数をつくる。
-		double endNumber;
+		double endNumber = 0;
 		// 増分の変数値をつくる。
-		double countNumber;
+		double countNumber = 0;
 		// 表を作れる値ではない場合はループをかける
 		do {
 			// 開始値の入力をするように表示する。
@@ -45,12 +45,14 @@ public class Ensyu4_15 {
 			System.out.print("何㎝ごと：");
 			// 増分の入力を求める。
 			countNumber = standardInput.nextDouble();
-		// 終了値より開始値のほうが高い場合と増分が0以下の場合にループする
-		} while (startNumber > endNumber || countNumber <= 0);
+		// 終了値より開始値のほうが高い場合と増分が0以下の場合、増分が開始値と終了値の差より大きい場合はループする
+		} while (startNumber > endNumber || countNumber <= 0 || countNumber > endNumber - startNumber
+				//開始値が100以下だった場合と終了値が300より大きい値だった場合もループする。
+				|| startNumber <= 100 || endNumber > 300);
 		
 		
 		// 標準体重を入れる変数をつくる。
-		double heightNumber;
+		double heightNumber = 0;
 		// 身長と標準体重の表の横軸をつくる。
 		System.out.println("身長  標準体重");
 		// 身長の開始値から終了値までの増分ごとの標準体重を出して表示するループをつくる。
