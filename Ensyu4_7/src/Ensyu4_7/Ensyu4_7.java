@@ -49,9 +49,9 @@ public class Ensyu4_7 {
 			loopNumber++;
 		}
 		
-		// ループが発生した場合の分岐。
-		if ( loopNumber > 1)
-			// ループが発生した場合のみ改行を行う。
+		// 入力した値が0ではない場合の分岐。
+		if ( asteriskNumber > 0)
+			// 改行を行う。
 			System.out.println("");
 		
 	}
