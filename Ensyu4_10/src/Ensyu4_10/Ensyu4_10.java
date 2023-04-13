@@ -26,13 +26,12 @@ public class Ensyu4_10 {
 		Scanner standardInput = new Scanner(System.in);
 		
 		//「*」の表示する個数の入力を行うことを示す。
-		System.out.println("何個*を表示しますか？：");
+		System.out.print("何個*を表示しますか？：");
 		// 何個の「*」を表示するかの入力を行う。
 		int integerNumber = standardInput.nextInt();
 		
 		// 入力した値の回数繰り返すループをつくる
 		for (int loopNumber = 0 ; loopNumber < integerNumber ; loopNumber++) {
-			
 			// 入力した値の回数「*」の表示を繰り返す。
 			System.out.print('*');
 		}
