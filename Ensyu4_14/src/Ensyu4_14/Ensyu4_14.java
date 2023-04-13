@@ -25,7 +25,7 @@ public class Ensyu4_14 {
 		// 入力をキーボードに指定する。main内で入力操作を行うコードより前に置く。
 		Scanner standardInput = new Scanner(System.in);
 		// 入力する変数をつくる。
-		int integerNumber;
+		int integerNumber = 0;
 		// これから行うことを示す。
 		System.out.println("1から入力した正の整数値までの和を求める。");
 		
@@ -40,7 +40,7 @@ public class Ensyu4_14 {
 		
 		
 		// 和を入れる変数sumNumbrを作る。初期値は0にする。
-		int sumNumber =0;
+		int sumNumber = 0;
 		// 1から入力した値より1低い値まで変数sumNumberに加えるためのループをつくる。
 		for(int loopNumber = 1; loopNumber < integerNumber ;loopNumber++) {
 			// 入力した値から1までの数字を加算する。
