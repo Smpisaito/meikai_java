@@ -51,7 +51,7 @@ public class Ensyu4_14 {
 		// 入力した値自体を変数sumNumberに加える。
 		sumNumber += integerNumber;
 		// 入力した値を式の最後となるように書く。
-		System.out.println(integerNumber + " = ");
+		System.out.print(integerNumber + " = ");
 		// 入力した整数値から0までの和の値を表示する。
 		System.out.println(sumNumber);
 	}
