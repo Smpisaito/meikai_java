@@ -63,10 +63,10 @@ public class Ensyu4_24 {
 		
 		// 変数checkNumberが0か1かで判別する
 		switch (checkNumber) {
-		// 変数checkNumberが0の場合は、入力した値が素数であることを表示する。
-		case 0: System.out.println("入力した値は素数です。"); break;
-		// 変数checkNumberが1の場合は、入力した値が素数ではないことを表示する。
-		case 1: System.out.println("入力した値は素数ではありません。"); break;
+			// 変数checkNumberが0の場合は、入力した値が素数であることを表示する。
+			case 0: System.out.println("入力した値は素数です。"); break;
+			// 変数checkNumberが1の場合は、入力した値が素数ではないことを表示する。
+			case 1: System.out.println("入力した値は素数ではありません。"); break;
 		}
 	}
 
