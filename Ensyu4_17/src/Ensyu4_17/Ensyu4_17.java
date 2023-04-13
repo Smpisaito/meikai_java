@@ -25,10 +25,18 @@ public class Ensyu4_17 {
 		// 入力をキーボードに指定する。main内で入力操作を行うコードより前に置く。
 		Scanner standardInput = new Scanner(System.in);
 		
-		// 整数値を入力することを示すように表示する。
-		System.out.print("正の整数値：");
-		// 整数値を入力する。
-		int integerNumber = standardInput.nextInt();
+		// 入力に用いる変数をつくる。
+		int integerNumber = 0;
+		
+		//正の整数値が入力されるまでループする。
+		do {
+			// 整数値を入力することを示すように表示する。
+			System.out.print("正の整数値：");
+			// 整数値を入力する。
+			integerNumber = standardInput.nextInt();
+		// 0以下の時ループする。
+		} while ( integerNumber <= 0 );
+		
 		
 		// 約数の数を数える変数countNumberをつくる。
 		int countNumber = 0;
