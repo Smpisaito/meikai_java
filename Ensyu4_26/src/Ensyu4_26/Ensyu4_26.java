@@ -53,7 +53,7 @@ public class Ensyu4_26 {
 		// 整数値の入力を入力した整数値の個数の分までループして行う。
 		for (int loopNumber = 1; loopNumber <= integerNumber; loopNumber++) {
 			// 整数値を入力することと、0を入力したら即座に入力を終えることを示すように表示する。
-			System.out.print("正の整数値：");
+			System.out.print("整数値：");
 			// 整数値を入力する。
 			int inputNumber = standardInput.nextInt();
 			// 入力した値が0未満であったならば分岐する
@@ -70,12 +70,19 @@ public class Ensyu4_26 {
 			
 		}
 		
-		// 入力の時の表示と分けるために改行を入れる。
-		System.out.println("");
-		// 合計を表示する。
-		System.out.println("合計：" + sumNumber );
-		// 平均を表示する。
-		System.out.println("平均：" + sumNumber/checkNumber );
+		// 入力が行われた(整数値の入力で正の数が入力された)場合の分岐
+		if (checkNumber >0) {
+			// 入力の時の表示と分けるために改行を入れる。
+			System.out.println("");
+			// 合計を表示する。
+			System.out.println("合計：" + sumNumber );
+			// 平均を表示する。
+			System.out.println("平均：" + sumNumber/checkNumber );
+		// 整数値の入力の一つ目で0が押されて終了した場合の分岐
+		} else {
+			// 整数値の入力で正の値の入力が行われていないまま終了したことを示す表示をする。
+			System.out.println("正の整数値が入力されずに終了しました。");
+		}
 	}
 
 }
