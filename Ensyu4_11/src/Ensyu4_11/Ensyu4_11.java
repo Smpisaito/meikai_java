@@ -28,7 +28,8 @@ public class Ensyu4_11 {
 		
 		// カウントダウンを行うことを示す。
 		System.out.println("カウントダウンを行います。");
-		int countNumber;
+		// 入力を行うための変数をつくる。
+		int countNumber = 0;
 		// 入力した値が1以上になるまで繰り返す。
 		do {
 			// 正の整数値を入力することを示す。
