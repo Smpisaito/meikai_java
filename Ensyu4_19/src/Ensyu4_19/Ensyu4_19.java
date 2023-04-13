@@ -82,14 +82,18 @@ public class Ensyu4_19 {
 				// 12～2月が冬であることを示す表示をする。
 				System.out.println("その月の季節は冬です。"); break;
 			}
-		// もう一度繰り返す判断をした場合はループする。
-		} while (true);
+			// 1か0を入力して再度行うか確認をとるループ。
+			do {
+				// もう一度行うかを聞くように表示する。
+				System.out.print("もう一度行いますか？  Yes … 1 / no … 0 :");
+				// もう一度行うかの入力を行う。
+				retryNumber = standardInput.nextInt();
+			// 入力値が1か0ではなければループする。
+			} while ( retryNumber < 0 || retryNumber > 1 );
 		
-		do {
-			// もう一度行うかの入力を行う。
-			retryNumber = standardInput.nextInt();
-		// 
-		} while (retryNumber == 1);
+		// もう一度繰り返す判断をした場合はループする。
+		} while ( retryNumber == 1 );
+		
 	}
 
 }
