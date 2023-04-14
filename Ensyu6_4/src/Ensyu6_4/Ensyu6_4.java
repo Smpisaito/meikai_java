@@ -31,11 +31,22 @@ public class Ensyu6_4 {
 		// 乱数を入力する際に、main内で入力操作を行うコードより前に置く
 		Random randomNumber = new Random();
 		
-		// 要素数を入力することを示す表示をする。
-		System.out.print("要素数：");
-		// 要素数を入力する
-		int arrayElements = standardInput.nextInt();
-		// 要素数をもとにint型の配列をつくる。
+		// 要素数の入力に使う変数をつくる。
+		int arrayElements = 0;
+		// 要素数として正の整数値が入力されるまで入力を続けるループ。
+		do {
+			// 要素数を入力することを示す表示をする。
+			System.out.print("要素数：");
+			// 要素数を入力する。
+			arrayElements = standardInput.nextInt();
+			// 正の整数値ではない値が入力された場合の分岐
+			if ( arrayElements <= 0) {
+				// 正の整数値を入力するように促す。
+				System.out.println("正の整数値を入力してください。");
+			}
+		// 要素数が0以下のときループする。
+		}while (arrayElements <= 0);
+		// 	入力した値を要素数にした配列をつくる。
 		int[] arrayNumber = new int[arrayElements];
 		
 		// 配列の全要素に1～10のランダムな値を入れるループ。
