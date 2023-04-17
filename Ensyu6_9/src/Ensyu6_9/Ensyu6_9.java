@@ -44,14 +44,14 @@ public class Ensyu6_9 {
 				System.out.println("正の整数値を入力してください。");
 			}
 		// 要素数が0以下のときループする。
-		}while (arrayElements <= 0);
+		} while (arrayElements <= 0);
 
 		// 入力した要素数の配列をつくる。
 		int[] arrayNumber = new int[arrayElements];
 		
 		// すべての要素に入力するループ。
 		for ( int loopNumber = 0; loopNumber < arrayElements; loopNumber++ ) {
-			// 要素に乱数1～10を代入する。
+			// 要素に乱数で1～10から代入する。値は乱数0～9(10)に1加えた値にする。
 			arrayNumber[loopNumber] = randomNumber.nextInt(10) + 1;
 		}
 		
