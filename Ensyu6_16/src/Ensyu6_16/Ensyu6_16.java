@@ -26,9 +26,9 @@ public class Ensyu6_16 {
 		Scanner standardInput = new Scanner(System.in);
 		
 		// 3を示す変数をつくる。
-		int thirdNumber = 3;
+		final int thirdNumber = 3;
 		// 4を示す変数をつくる。
-		int fourthNumber = 4;
+		final int fourthNumber = 4;
 		// 4行3列の行列をつくる。
 		int[][] firstArray = new int[fourthNumber][thirdNumber];
 		// 3行4列の行列をつくる。
