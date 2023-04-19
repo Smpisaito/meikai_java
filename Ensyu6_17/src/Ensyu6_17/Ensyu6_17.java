@@ -26,9 +26,9 @@ public class Ensyu6_17 {
 		Scanner standardInput = new Scanner(System.in);
 		
 		// 人数を示す変数に6の初期値を入れる。
-		int testMenber = 6;
+		final int testMenber = 6;
 		// テストの科目数を示す変数に6の初期値を入れる。
-		int testSubject = 2;
+		final int testSubject = 2;
 		// テストの科目数を行に、人数を列にした行列をつくる。
 		int[][] testPoint = new int[testSubject][testMenber];
 		// 科目の名前を示す配列をつくる。
