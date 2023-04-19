@@ -75,7 +75,7 @@ public class Ensyu6_19 {
 				// 点数の入力を0～100のみ受け付けるループ。
 				do {
 					// どのクラスの何人目に入れているのかがわかるように表示する。
-					System.out.print("クラス" + (firstLoop + 1) + " " + (secondLoop + 1) + "人目 :");
+					System.out.print("クラス" + (firstLoop + 1) + " - " + (secondLoop + 1) + "人目 :");
 					// 点数の入力を行う
 					arrayNumber[firstLoop][secondLoop] = standardInput.nextInt();
 					// 0未満、もしくは100より大きい値が入力されていた場合のループ。
@@ -90,10 +90,10 @@ public class Ensyu6_19 {
 			System.out.println();
 		}
 		
-		// 行列の合計行を示す変数に初期値0を入れる。
-		int sumNumber = 0;
-		// 行列の平均行を表す変数に初期値1をいれる。
-		int averageNumber = 1;
+		// 行列の合計行を示す変数に0を入れる。
+		final int sumNumber = 0;
+		// 行列の平均行を表す変数に1をいれる。
+		final int averageNumber = 1;
 		// 合計と平均となる行列をつくる。クラス数に全体の分の行として1加えた値と2(合計と平均の2通り)でつくる。
 		double[][] pointArray = new double[arrayElements + 1][2];
 		// 各クラスの合計と平均を求めるループ。
@@ -112,16 +112,16 @@ public class Ensyu6_19 {
 		pointArray[arrayElements][averageNumber] = pointArray[arrayElements][sumNumber] / sumMenber;
 		
 		// 項目名を表示する。
-		System.out.println("  組 |    合計   平均");
+		System.out.println("  組 | 合計   平均");
 		// 項目と分ける線をつくる。
-		System.out.println("-----+----------------");
+		System.out.println("-----+------------");
 		// 各クラスの組と合計と平均の値を表示するループ
 		for (int firstLoop = 0; firstLoop < arrayElements; firstLoop++) {
 			// クラス、合計、平均を表示する。合計は整数値のみ、平均の値は小数点以下第一位までを表示する。
 			System.out.printf("%2d組 |%5.0f  %5.1f\n", firstLoop + 1, pointArray[firstLoop][sumNumber], pointArray[firstLoop][averageNumber]);
 		}
 		// 全体の値と分ける線をつくる。
-		System.out.println("-----+----------------");
+		System.out.println("-----+------------");
 		// 全体のであることと全体の合計と平均の値を表示する。合計は整数値のみ、小数点以下第一位までを表示する。
 		System.out.printf("  計 |%5.0f  %5.1f", pointArray[arrayElements][sumNumber], pointArray[arrayElements][averageNumber]);
 	}
