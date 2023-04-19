@@ -36,7 +36,7 @@ public class Ensyu6_15 {
 		// 前の問の曜日を示す変数をつくる。初期値は0未満か8以上の値であればいい。
 		int backNumber = -1;
 		// 曜日の値として7を代入した変数をつくる。
-		int randomInteger = 7;
+		final int randomInteger = 7;
 		// 日本語の曜日名を入れる配列をつくる。
 		String[] weekJapanese = new String[randomInteger];
 		// 曜日の英語表現を入れる配列をつくる。
