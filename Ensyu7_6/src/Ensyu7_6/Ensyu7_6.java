@@ -85,7 +85,7 @@ public class Ensyu7_6 {
 			}
 		// 入力した値が0以下ならループする。
 		} while( integerNumber <= 0 );
-		
+		// 入力した値を返す。
 		return integerNumber;
 		
 	}
