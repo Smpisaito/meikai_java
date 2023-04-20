@@ -17,11 +17,15 @@ public class Ensyu7_12 {
 	 * 概要：整数xを右にnビット回転した値を返す。関数名・引数名は指定のものを使う。
 	 * 引数：x … 整数
 	 *       n … 整数ビットの回転数
-	 * 戻り値：なし
+	 * 戻り値：bitsInteger … 回転後の整数値
 	 * 作成者：S.Saito
 	 * 作成日：2023.04.20
 	 */
-	static void rRotate(int x, int n) {
+	static int rRotate(int x, int n) {
+		// 戻り値として変更後の値となる変数に初期値1を入れる。
+		int bitsInteger = 0;
+		// final変数で2をとる。
+		final int SECONDFINAL = 2;
 		// ビット数の32の値を入れる。
 		final int BITSCOUNT = 32;
 		// nの値の32の剰余をあらわす
@@ -30,12 +34,19 @@ public class Ensyu7_12 {
 		for (int loopNumber = remainderInteger - 1;loopNumber >= 0; loopNumber--) {
 			// シフトしたときの1の位の値が1なら1、0なら0を表示することでビットを表示する。
 			System.out.print(((x >>> loopNumber & 1) == 1) ? '1' : '0');
+			// シフトしたときの値を戻り値bitsIntegerに加える。
+			bitsInteger += ((x >>> loopNumber & 1) == 0) ? 0 : exponentiationInteger(SECONDFINAL,BITSCOUNT+loopNumber-remainderInteger);
 		}
 		// 回転した値を表示する。
-		for (int loopNumber = 31 ;loopNumber >= remainderInteger; loopNumber--) {
+		for (int loopNumber = BITSCOUNT - 1 ;loopNumber >= remainderInteger; loopNumber--) {
 			// シフトしたときの1の位の値が1なら1、0なら0を表示することでビットを表示する。
 			System.out.print(((x >>> loopNumber & 1) == 1) ? '1' : '0');
+			// シフトしたときの値を戻り値bitsIntegerに加える。
+			bitsInteger += ((x >>> loopNumber & 1) == 0) ? 0 : exponentiationInteger(SECONDFINAL,loopNumber-remainderInteger);
+			
 		}
+		// bitsIntegerの値を返す。
+		return bitsInteger;
 	}
 	
 	/*
@@ -43,25 +54,34 @@ public class Ensyu7_12 {
 	 * 概要：整数xを左にnビット回転した値を返す。関数名・引数名は指定のものを使う。
 	 * 引数：x … 整数
 	 *       n … 整数ビットの回転数
-	 * 戻り値：なし
+	 * 戻り値：bitsInteger … 回転後の整数値
 	 * 作成者：S.Saito
 	 * 作成日：2023.04.20
 	 */
-	static void lRotate(int x, int n) {
+	static int lRotate(int x, int n) {
+		// 戻り値として変更後の値となる変数に初期値1を入れる。
+		int bitsInteger = 0;
+		// final変数で2をとる。
+		final int SECONDFINAL = 2;
 		// ビット数の32の値を入れる。
 		final int BITSCOUNT = 32;
 		// nの値の32の剰余をあらわす
 		int remainderInteger = n % BITSCOUNT;
 		// もともと値の入っているビットのみ表示する。
-		for (int loopNumber = 31 - remainderInteger;loopNumber >= 0; loopNumber--) {
+		for (int loopNumber = BITSCOUNT - 1 - remainderInteger;loopNumber >= 0; loopNumber--) {
 			// シフトしたときの1の位の値が1なら1、0なら0を表示することでビットを表示する。
 			System.out.print(((x >>> loopNumber & 1) == 1) ? '1' : '0');
+			// シフトしたときの値を戻り値bitsIntegerに加える。
+			bitsInteger += ((x >>> loopNumber & 1) == 0) ? 0 : exponentiationInteger(SECONDFINAL,loopNumber + remainderInteger);
 		}
 		// 回転した値を表示する。
-		for (int loopNumber = 31 ;loopNumber > 31 - remainderInteger; loopNumber--) {
+		for (int loopNumber = BITSCOUNT - 1 ;loopNumber > BITSCOUNT - 1 - remainderInteger; loopNumber--) {
 			// シフトしたときの1の位の値が1なら1、0なら0を表示することでビットを表示する。
 			System.out.print(((x >>> loopNumber & 1) == 1) ? '1' : '0');
+			// シフトしたときの値を戻り値bitsIntegerに加える。
+			bitsInteger += ((x >>> loopNumber & 1) == 0) ? 0 : exponentiationInteger(SECONDFINAL,loopNumber + remainderInteger - BITSCOUNT);
 		}
+		return bitsInteger;
 	}
 
 	/*
@@ -78,6 +98,26 @@ public class Ensyu7_12 {
 			// シフトしたときの1の位の値が1なら1、0なら0を表示することでビットを表示する。
 			System.out.print(((integerNumber >>> loopNumber & 1) == 1) ? '1' : '0');
 		}
+	}
+	
+	static int exponentiationInteger(int baseNumber, int exponentNumber) {
+		// integerNumberに初期値1を入れる。
+		int integerNumber = 1;
+		// べき指数が0以上である場合の分岐
+		if (exponentNumber >= 0){
+			// べき数の回数ループする。
+			for(int loopNumber = 0;loopNumber < exponentNumber ;loopNumber++) {
+				// 底をかける
+				integerNumber *= baseNumber;
+			} 
+		// 正か0ではないとき
+		}else {
+			// 問題点を表示する。
+			System.out.println("べき数が負の値でした。確認をしてください");
+		}
+		// 
+		return integerNumber;
+	
 	}
 	
 	/*
@@ -151,13 +191,17 @@ public class Ensyu7_12 {
 		printBits(integerNumber);
 		
 		// 整数値の右にビット回転した時のビット構成。
-		System.out.println("\n整数値の右にビット回転した時の値");
+		System.out.println("\n\n整数値の右にビット回転した時のビット構成");
 		// 整数値の右にビット回転した時のビット構成を表示する
-		rRotate(integerNumber, bitsRotate);
+		int rightBits = rRotate(integerNumber, bitsRotate);
+		// 処理後の値を表示する。
+		System.out.print("\n右回転後の値：" + rightBits);
 		
 		// 整数値の左にビット回転した時のビット構成。
-		System.out.println("\n整数値の左にビット回転した時の値");
-		/// 整数値の右にビット回転した時のビット構成を表示する
-		lRotate(integerNumber, bitsRotate);
+		System.out.println("\n\n整数値の左にビット回転した時のビット構成");
+		// 整数値の左にビット回転した時のビット構成を表示する
+		int leftBits = lRotate(integerNumber, bitsRotate);
+		// 処理後の値を表示する。
+		System.out.print("\n左回転後の値：" + leftBits);
 	}
 }
