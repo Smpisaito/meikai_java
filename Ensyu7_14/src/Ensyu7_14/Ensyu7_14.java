@@ -1,6 +1,7 @@
 // パッケージの宣言
 package Ensyu7_14;
 
+//入力操作を行うときにクラスの宣言の前に置く。
 import java.util.Scanner;
 
 /*
@@ -62,29 +63,28 @@ public class Ensyu7_14 {
 	}
 	
 	/*
-	 * 関数名：inpurMore
-	 * 概要：「(引数の文字)：」と表示し、その後に0以上の整数値の入力を求める。0以上の整数値が入れられるまでループし、最終的な値を返却する。
+	 * 関数名：inputBits
+	 * 概要：「(引数の文字)：」と表示し、その後に整数値の入力を求める。0から31が入れられるまでループし、最終的な値を返却する。
 	 * 引数：outputWord … String型の表示に使う文字列。
-	 *       lowerNumber … 入力する値の最小値
-	 * 戻り値：integerNumber … 最小値以上の入力した整数値を返却する。
+	 * 戻り値：integerNumber … 整数値として返却する。
 	 * 作成者：S.Saito
-	 * 作成日：2023.04.20
+	 * 作成日：2023.04.21
 	 */
-	static int inputMore(String outputWord, int lowerNumber) {
+	static int inputBits(String outputWord) {
 		
 		// 入力を行う変数をつくる。
 		int integerNumber = 0;
-		// 正の整数値が入力されるまで入力を続けるループ。
+		// ビット数が入力されるまで入力を続けるループ。
 		do {
 			// 整数値の入力を行う。
 			integerNumber = inputInteger(outputWord);
-			// 正の整数値ではないときに分岐する。
-			if (integerNumber < lowerNumber) {
-				// 正の整数値を入力するように促す。
-				System.out.println(lowerNumber + "以上の値を入力してください。");
+			// 0～31の整数値ではないときに分岐する。
+			if (integerNumber < 0 || integerNumber > 31) {
+				// 0～31の整数値を入力するように促す。
+				System.out.println("0～31の値を入力してください。");
 			}
-		// 入力した値が0以下ならループする。
-		} while( integerNumber < lowerNumber );
+		// 入力した値が0～31ではないならループする。
+		} while( integerNumber < 0 || integerNumber > 31);
 		// 最後に入力した値を返す。
 		return integerNumber;
 	}
@@ -175,7 +175,7 @@ public class Ensyu7_14 {
 		// 2のfinal変数をつくる。
 		final int SECONDFINAL = 2;
 		// 整数値xのビット構造において、posビット目の値が1の時の分岐。
-		if ((integerNumber >>> positionNumber) == 1) {
+		if ((integerNumber >> positionNumber) == 1) {
 			// xの値に2のpos乗の値を引く。
 			bitsNumber = integerNumber - getPowor(SECONDFINAL, positionNumber);
 		// それ以外、posビット目が0の場合
@@ -202,7 +202,7 @@ public class Ensyu7_14 {
 		// 2のfinal変数をつくる。
 		final int SECONDFINAL = 2;
 		// 整数値xのビット構造において、posビット目の値が1の時の分岐。
-		if ((integerNumber >>> positionNumber) == 1) {
+		if ((integerNumber >> positionNumber) == 1) {
 			// xの値に2のpos乗の値を引く。
 			bitsNumber = integerNumber - getPowor(SECONDFINAL, positionNumber);
 		// それ以外、posビット目が0の場合
@@ -293,7 +293,7 @@ public class Ensyu7_14 {
 		// 整数値の入力を行う。
 		int integerNumber = inputInteger("整数値");
 		// ビット構造の位を0以上の値で入力する。
-		int bitsInteger = inputMore("変換を始めるビット構造の位",0);
+		int bitsInteger = inputBits("変換を始めるビット構造の位");
 		// 変換する個数を入力する。
 		int countBits = inputPlus("変換するビットの個数");
 		// 整数値のもともとのビット構造を示す表示をする。
