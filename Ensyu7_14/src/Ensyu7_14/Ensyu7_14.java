@@ -17,7 +17,7 @@ public class Ensyu7_14 {
 	 * 引数：outputWord … String型の表示に使う文字列。
 	 * 戻り値：integerNumber … 正の整数値として返却する。
 	 * 作成者：S.Saito
-	 * 作成日：
+	 * 作成日：2023.04.21
 	 */
 	static int inputInteger(String outputWord) {
 		// 入力をキーボードに指定する。関数内で入力操作を行うコードより前に置く。
@@ -40,7 +40,7 @@ public class Ensyu7_14 {
 	 * 引数：outputWord … String型の表示に使う文字列。
 	 * 戻り値：integerNumber … 正の整数値として返却する。
 	 * 作成者：S.Saito
-	 * 作成日：
+	 * 作成日：2023.04.21
 	 */
 	static int inputPlus(String outputWord) {
 		
@@ -95,7 +95,7 @@ public class Ensyu7_14 {
 	 * 引数：integerNumber … int型の整数値
 	 * 戻り値：なし
 	 * 作成者：S.Saito
-	 * 作成日：
+	 * 作成日：2023.04.21
 	 */
 	static void printBits(int integerNumber) {
 		// int型(32bit)の全てを確認する。
@@ -112,7 +112,7 @@ public class Ensyu7_14 {
 	 *       exponentNumber … べき指数を示す正の整数値
 	 * 戻り値：integerNumber … べき数が正か0であれば計算した値を、べき数が正か0ではない場合は1を返す
 	 * 作成者：S.Saito
-	 * 作成日：
+	 * 作成日：2023.04.21
 	 */
 	static int getPowor(int baseNumber, int exponentNumber) {
 		// integerNumberに初期値1を入れる。
