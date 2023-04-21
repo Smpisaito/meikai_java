@@ -33,34 +33,6 @@ public class Ensyu7_14 {
 		// 入力した値を返す。
 		return integerNumber;
 	}
-
-	
-	/*
-	 * 関数名：inputPlus
-	 * 概要：「(引数の文字)：」と表示し、その後に正の整数値の入力を求める。正の整数値が入れられるまでループし、最終的な値を返却する。
-	 * 引数：outputWord … String型の表示に使う文字列。
-	 * 戻り値：integerNumber … 正の整数値として返却する。
-	 * 作成者：S.Saito
-	 * 作成日：2023.04.21
-	 */
-	static int inputPlus(String outputWord) {
-		
-		// 入力を行う変数をつくる。
-		int integerNumber = 0;
-		// 正の整数値が入力されるまで入力を続けるループ。
-		do {
-			// 整数値の入力を行う。
-			integerNumber = inputInteger(outputWord);
-			// 正の整数値ではないときに分岐する。
-			if (integerNumber <= 0) {
-				// 正の整数値を入力するように促す。
-				System.out.println("正の整数値を入力してください。");
-			}
-		// 入力した値が0以下ならループする。
-		} while( integerNumber <= 0 );
-		// 最後に入力した値を返す。
-		return integerNumber;
-	}
 	
 	/*
 	 * 関数名：inputBits
@@ -148,7 +120,7 @@ public class Ensyu7_14 {
 		// 2のfinal変数をつくる。
 		final int SECONDFINAL = 2;
 		// 整数値xのビット構造において、posビット目の値が1の時の分岐。
-		if ((integerNumber >>> positionNumber) == 1) {
+		if (((integerNumber >> positionNumber) & 1 ) == 1) {
 			// xの値をそのまま戻り値に代入する。
 			bitsNumber = integerNumber;
 		// それ以外、posビット目が0の場合
@@ -175,7 +147,7 @@ public class Ensyu7_14 {
 		// 2のfinal変数をつくる。
 		final int SECONDFINAL = 2;
 		// 整数値xのビット構造において、posビット目の値が1の時の分岐。
-		if ((integerNumber >> positionNumber) == 1) {
+		if (((integerNumber >> positionNumber) & 1 ) == 1) {
 			// xの値に2のpos乗の値を引く。
 			bitsNumber = integerNumber - getPowor(SECONDFINAL, positionNumber);
 		// それ以外、posビット目が0の場合
@@ -202,7 +174,7 @@ public class Ensyu7_14 {
 		// 2のfinal変数をつくる。
 		final int SECONDFINAL = 2;
 		// 整数値xのビット構造において、posビット目の値が1の時の分岐。
-		if ((integerNumber >> positionNumber) == 1) {
+		if (((integerNumber >> positionNumber) & 1 ) == 1) {
 			// xの値に2のpos乗の値を引く。
 			bitsNumber = integerNumber - getPowor(SECONDFINAL, positionNumber);
 		// それ以外、posビット目が0の場合
@@ -295,7 +267,7 @@ public class Ensyu7_14 {
 		// ビット構造の位を0以上の値で入力する。
 		int bitsInteger = inputBits("変換を始めるビット構造の位");
 		// 変換する個数を入力する。
-		int countBits = inputPlus("変換するビットの個数");
+		int countBits = inputBits("変換するビットの個数");
 		// 整数値のもともとのビット構造を示す表示をする。
 		printBits(integerNumber);
 		// 改行を入れる。
@@ -304,7 +276,7 @@ public class Ensyu7_14 {
 		// メソッドsetの処理を行う
 		int firstBits = setN(integerNumber,bitsInteger,countBits);
 		// メソッドsetの処理の結果を示す表示をする。
-		System.out.println("\nビット構造の" + bitsInteger + "の位を1にした値は" + firstBits + "です。");
+		System.out.println("\nビット構造の" + bitsInteger + "の位から" + countBits + "までを1にした値は" + firstBits + "です。");
 		// メソッドsetの処理の結果を示す表示をする。
 		printBits(firstBits);
 		// 改行を入れる。
@@ -313,7 +285,7 @@ public class Ensyu7_14 {
 		// メソッドresetの処理を行う
 		int secondBits = resetN(integerNumber,bitsInteger,countBits);
 		// メソッドresetの処理の結果を示す表示をする。
-		System.out.println("\nビット構造の" + bitsInteger + "の位を0にした値は" + secondBits + "です。");
+		System.out.println("\nビット構造の" + bitsInteger + "の位から" + countBits + "までを0にした値は" + secondBits + "です。");
 		// メソッドresetの処理の結果を示す表示をする。
 		printBits(secondBits);
 		// 改行を入れる。
@@ -322,7 +294,7 @@ public class Ensyu7_14 {
 		// メソッドinverseの処理を行う
 		int thirdBits = inverseN(integerNumber,bitsInteger,countBits);
 		// メソッドinverseの処理の結果を示す表示をする。
-		System.out.println("\nビット構造の" + bitsInteger + "の位を反転した値は" + thirdBits + "です。");
+		System.out.println("\nビット構造の" + bitsInteger + "の位から" + countBits + "までを反転した値は" + thirdBits + "です。");
 		// メソッドinverseの処理の結果を示す表示をする。
 		printBits(thirdBits);
 		// 改行を入れる。
