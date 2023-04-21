@@ -36,14 +36,15 @@ public class Ensyu7_13 {
 
 	
 	/*
-	 * 関数名：plusInteger
-	 * 概要：「(引数の文字)：」と表示し、その後に正の整数値の入力を求める。正の整数値が入れられるまでループし、最終的な値を返却する。
+	 * 関数名：overInteger
+	 * 概要：「(引数の文字)：」と表示し、その後に0以上の整数値の入力を求める。0以上の整数値が入れられるまでループし、最終的な値を返却する。
 	 * 引数：outputWord … String型の表示に使う文字列。
-	 * 戻り値：integerNumber … 正の整数値として返却する。
+	 *       lowerNumber … 入力する値の最小値
+	 * 戻り値：integerNumber … 最小値以上の入力した整数値を返却する。
 	 * 作成者：S.Saito
 	 * 作成日：2023.04.20
 	 */
-	static int plusInteger(String outputWord) {
+	static int overInteger(String outputWord, int lowerNumber) {
 		
 		// 入力を行う変数をつくる。
 		int integerNumber = 0;
@@ -52,12 +53,12 @@ public class Ensyu7_13 {
 			// 整数値の入力を行う。
 			integerNumber = inputInteger(outputWord);
 			// 正の整数値ではないときに分岐する。
-			if (integerNumber <= 0) {
+			if (integerNumber < lowerNumber) {
 				// 正の整数値を入力するように促す。
-				System.out.println("正の整数値を入力してください。");
+				System.out.println(lowerNumber + "以上の値を入力してください。");
 			}
 		// 入力した値が0以下ならループする。
-		} while( integerNumber <= 0 );
+		} while( integerNumber < lowerNumber );
 		// 最後に入力した値を返す。
 		return integerNumber;
 	}
@@ -201,8 +202,8 @@ public class Ensyu7_13 {
 	public static void main(String[] args){
 		// 整数値の入力を行う。
 		int integerNumber = inputInteger("整数値");
-		// ビット構造の位
-		int bitsInteger = plusInteger("ビット構造の位");
+		// ビット構造の位を0以上の値で入力する。
+		int bitsInteger = overInteger("ビット構造の位",0);
 		// 整数値のもともとのビット構造を示す表示をする。
 		printBits(integerNumber);
 		// 改行を入れる。
