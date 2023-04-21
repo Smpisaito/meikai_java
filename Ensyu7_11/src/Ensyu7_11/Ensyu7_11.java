@@ -101,7 +101,7 @@ public class Ensyu7_11 {
 			// 問題点を表示する。
 			System.out.println("べき指数が負の値でした。確認をしてください");
 		}
-		// 
+		// 戻り値を返す。
 		return integerNumber;
 	}
 	
