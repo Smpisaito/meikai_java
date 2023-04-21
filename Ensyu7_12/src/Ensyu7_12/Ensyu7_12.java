@@ -22,7 +22,7 @@ public class Ensyu7_12 {
 	 * 作成日：2023.04.20
 	 */
 	static int rRotate(int x, int n) {
-		// 戻り値として変更後の値となる変数に初期値1を入れる。
+		// 戻り値として変更後の値となる変数に初期値0を入れる。
 		int bitsInteger = 0;
 		// final変数で2をとる。
 		final int SECONDFINAL = 2;
@@ -99,7 +99,15 @@ public class Ensyu7_12 {
 			System.out.print(((integerNumber >>> loopNumber & 1) == 1) ? '1' : '0');
 		}
 	}
-	
+	/*
+	 * 関数名：xponentiationInteger
+	 * 概要：int型の値から2のべき乗の計算を行う。べき数が正か0ではない場合はそのことを表示してから1を返す。
+	 * 引数：baseNumber … 底を示す整数値。
+	 *       exponentNumber … べき指数を示す正の整数値
+	 * 戻り値：integerNumber … べき数が正か0であれば計算した値を、べき数が正か0ではない場合は1を返す
+	 * 作成者：S.Saito
+	 * 作成日：2023.04.21
+	 */
 	static int exponentiationInteger(int baseNumber, int exponentNumber) {
 		// integerNumberに初期値1を入れる。
 		int integerNumber = 1;
@@ -115,7 +123,7 @@ public class Ensyu7_12 {
 			// 問題点を表示する。
 			System.out.println("べき数が負の値でした。確認をしてください");
 		}
-		// 
+		// 戻り値を返す。
 		return integerNumber;
 	
 	}
