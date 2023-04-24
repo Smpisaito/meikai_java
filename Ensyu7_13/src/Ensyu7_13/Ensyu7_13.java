@@ -1,0 +1,241 @@
+// パッケージの宣言
+package Ensyu7_13;
+
+//入力操作を行うときにクラスの宣言の前に置く。
+import java.util.Scanner;
+
+/*
+ * クラス名：Ensyu7_13
+ * 概要：演習7-13クラス
+ * 作成者：S.Saito
+ * 作成日：2023.04.20
+ */
+public class Ensyu7_13 {
+	
+	/*
+	 * 関数名：inputInteger
+	 * 概要：「(引数の文字)：」と表示し、その後に整数値の入力を求め、その値を返却する。
+	 * 引数：outputWord … String型の表示に使う文字列。
+	 * 戻り値：integerNumber … 正の整数値として返却する。
+	 * 作成者：S.Saito
+	 * 作成日：2023.04.20
+	 */
+	static int inputInteger(String outputWord) {
+		// 入力をキーボードに指定する。関数内で入力操作を行うコードより前に置く。
+		Scanner standardInput = new Scanner(System.in);
+		
+		// 入力を行う変数をつくる。
+		int integerNumber = 0;
+		// 「(引数の文字列)：」と表示する。
+		System.out.print(outputWord + "：");
+		// 整数値の入力を行う。
+		integerNumber = standardInput.nextInt();
+		// 入力した値を返す。
+		return integerNumber;
+	}
+
+	
+	/*
+	 * 関数名：inputBits
+	 * 概要：「(引数の文字)：」と表示し、その後に整数値の入力を求める。0から31が入れられるまでループし、最終的な値を返却する。
+	 * 引数：outputWord … String型の表示に使う文字列。
+	 * 戻り値：integerNumber … 整数値として返却する。
+	 * 作成者：S.Saito
+	 * 作成日：2023.04.21
+	 */
+	static int inputBits(String outputWord) {
+		
+		// 入力を行う変数をつくる。
+		int integerNumber = 0;
+		// ビット数が入力されるまで入力を続けるループ。
+		do {
+			// 整数値の入力を行う。
+			integerNumber = inputInteger(outputWord);
+			// 0～31の整数値ではないときに分岐する。
+			if (integerNumber < 0 || integerNumber > 31) {
+				// 0～31の整数値を入力するように促す。
+				System.out.println("0～31の値を入力してください。");
+			}
+		// 入力した値が0～31ではないならループする。
+		} while( integerNumber < 0 || integerNumber > 31);
+		// 最後に入力した値を返す。
+		return integerNumber;
+	}
+	
+	/*
+	 * 関数名：printBits
+	 * 概要：int型の整数のbitの内容を表示する。
+	 * 引数：integerNumber … int型の整数値
+	 * 戻り値：なし
+	 * 作成者：S.Saito
+	 * 作成日：2023.04.20
+	 */
+	static void printBits(int integerNumber) {
+		// int型(32bit)の全てを確認する。
+		for (int loopNumber = 31;loopNumber >= 0; loopNumber--) {
+			// シフトしたときの1の位の値が1なら1、0なら0を表示することでビットを表示する。
+			System.out.print(((integerNumber >>> loopNumber & 1) == 1) ? '1' : '0');
+		}
+	}
+	
+	/*
+	 * 関数名：exponentiationInteger
+	 * 概要：int型の値から2のべき乗の計算を行う。べき数が正か0ではない場合はそのことを表示してから1を返す。
+	 * 引数：baseNumber … 底を示す整数値。
+	 *       exponentNumber … べき指数を示す正の整数値
+	 * 戻り値：integerNumber … べき数が正か0であれば計算した値を、べき数が正か0ではない場合は1を返す
+	 * 作成者：S.Saito
+	 * 作成日：
+	 */
+	static int exponentiationInteger(int baseNumber, int exponentNumber) {
+		// integerNumberに初期値1を入れる。
+		int integerNumber = 1;
+		// べき指数が0以上である場合の分岐
+		if (exponentNumber >= 0){
+			// べき数の回数ループする。
+			for(int loopNumber = 0;loopNumber < exponentNumber ;loopNumber++) {
+				// 底をかける
+				integerNumber *= baseNumber;
+			} 
+		// 正か0ではないときの分岐
+		}else {
+			// 問題点を表示する。
+			System.out.println("べき数が負の値でした。確認をしてください");
+		}
+		// 戻り値を返す。
+		return integerNumber;
+	}
+	
+	
+	
+	/*
+	 * 関数名：set
+	 * 概要：引数posビット目の値を1にした値を返す。関数名・引数名は指定のものを使う。
+	 * 引数：x … 元となる整数値
+	 *       pos … 何ビット目の値を1にするか示す。最下位から 0,1,2…、と数える。
+	 * 戻り値：bitsInteger … 変換後の値。変換しなかった場合はそのままの値を返す。
+	 * 作成者：S.Saito
+	 * 作成日：20023.04.21
+	 */
+	static int set(int x, int pos) {
+		// 戻り値を設定する。
+		int bitsNumber = 0;
+		// 2のfinal変数をつくる。
+		final int SECONDFINAL = 2;
+		// 整数値xのビット構造において、posビット目の値が1の時の分岐。
+		if ((x >> pos) == 1) {
+			// xの値をそのまま戻り値に代入する。
+			bitsNumber = x;
+		// それ以外、posビット目が0の場合
+		} else {
+			// xの値に2のpos乗の値を入れる。
+			bitsNumber = x + exponentiationInteger(SECONDFINAL, pos);
+		}
+		// 戻り値を返す。
+		return bitsNumber;
+	}
+	
+	/*
+	 * 関数名：reset
+	 * 概要：引数posビット目の値を0にした値を返す。関数名・引数名は指定のものを使う。
+	 * 引数：x … 元となる整数値
+	 *       pos … 何ビット目の値を0にするか示す。最下位から 0,1,2…、と数える。
+	 * 戻り値：bitsInteger … 変換後の値。変換しなかった場合はそのままの値を返す。
+	 * 作成者：S.Saito
+	 * 作成日：20023.04.21
+	 */
+	static int reset(int x, int pos) {
+		// 戻り値を設定する。
+		int bitsNumber = 0;
+		// 2のfinal変数をつくる。
+		final int SECONDFINAL = 2;
+		// 整数値xのビット構造において、posビット目の値が1の時の分岐。
+		if ((x >> pos) == 1) {
+			// xの値に2のpos乗の値を引く。
+			bitsNumber = x - exponentiationInteger(SECONDFINAL, pos);
+		// それ以外、posビット目が0の場合
+		} else {
+			// xの値をそのまま戻り値に代入する。
+			bitsNumber = x;
+		}
+		// 戻り値を返す。
+		return bitsNumber;
+	}
+	
+	/*
+	 * 関数名：inverse
+	 * 概要：引数posビット目の値を反転した値を返す。関数名・引数名は指定のものを使う。
+	 * 引数：x … 元となる整数値
+	 *       pos … 何ビット目の値を1なら0、0なら1にするか示す。最下位から 0,1,2…、と数える。
+	 * 戻り値：bitsInteger … 変換後の値。
+	 * 作成者：S.Saito
+	 * 作成日：20023.04.21
+	 */
+	static int inverse(int x, int pos) {
+		// 戻り値を設定する。
+		int bitsNumber = 0;
+		// 2のfinal変数をつくる。
+		final int SECONDFINAL = 2;
+		// 整数値xのビット構造において、posビット目の値が1の時の分岐。
+		if ((x >> pos) == 1) {
+			// xの値に2のpos乗の値を引く。
+			bitsNumber = x - exponentiationInteger(SECONDFINAL, pos);
+		// それ以外、posビット目が0の場合
+		} else {
+			// xの値に2のpos乗の値を入れる。
+			bitsNumber = x + exponentiationInteger(SECONDFINAL, pos);
+		}
+		// 戻り値を返す。
+		return bitsNumber;
+	}
+	
+	/*
+	 * 関数名：main
+	 * 概要：整数値と参考にするビット(二進数)の位を入力し、1にした値、0にした値、1なら0・0なら1にした値を表示する。
+	 *       位に関しては、ビット構造の最下位から 0,1,2…、とする。
+	 * 引数：なし
+	 * 戻り値：なし
+	 * 作成者：S.Saito
+	 * 作成日：2023.04.21
+	 */
+	public static void main(String[] args){
+		// 整数値の入力を行う。
+		int integerNumber = inputInteger("整数値");
+		// ビット構造の位を0以上31以下の値で入力する。
+		int bitsInteger = inputBits("ビット構造の位");
+		// 整数値のもともとのビット構造を示す表示をする。
+		printBits(integerNumber);
+		// 改行を入れる。
+		System.out.println();
+		
+		// メソッドsetの処理を行う
+		int firstBits = set(integerNumber,bitsInteger);
+		// メソッドsetの処理の結果を示す表示をする。
+		System.out.println("\nビット構造の" + bitsInteger + "の位を1にした値は" + firstBits + "です。");
+		// メソッドsetの処理の結果を示す表示をする。
+		printBits(firstBits);
+		// 改行を入れる。
+		System.out.println();
+		
+		// メソッドresetの処理を行う
+		int secondBits = reset(integerNumber,bitsInteger);
+		// メソッドresetの処理の結果を示す表示をする。
+		System.out.println("\nビット構造の" + bitsInteger + "の位を0にした値は" + secondBits + "です。");
+		// メソッドresetの処理の結果を示す表示をする。
+		printBits(secondBits);
+		// 改行を入れる。
+		System.out.println();
+		
+		// メソッドinverseの処理を行う
+		int thirdBits = inverse(integerNumber,bitsInteger);
+		// メソッドinverseの処理の結果を示す表示をする。
+		System.out.println("\nビット構造の" + bitsInteger + "の位を反転した値は" + thirdBits + "です。");
+		// メソッドinverseの処理の結果を示す表示をする。
+		printBits(thirdBits);
+		// 改行を入れる。
+		System.out.println();
+		
+	}
+
+
+}
