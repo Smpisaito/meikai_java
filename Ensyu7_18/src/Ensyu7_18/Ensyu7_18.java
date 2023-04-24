@@ -166,19 +166,18 @@ public class Ensyu7_18 {
 		
 		// 配列内から削除する要素のインデックスの値を入れる。
 		int deleteIndex = inputRange("削除する要素のインデックス", 0 , arrayElements - 1);
-		// 配列の要素数が1の時
-		if (arrayElements == 1) {
+		// 削除する要素が末尾の時の分岐
+		if (arrayElements == deleteIndex) {
 			// 最後の要素を削除したことを示す表示をする。
-			System.out.println("最後の要素を削除しました。");
-		// 削除後の配列を表示する。
-		} else {
-			// 配列から要素を削除する
-			aryRmv(arrayNumber,deleteIndex);
-			// 削除後の配列の表示を行う。
-			System.out.print("削除後の配列：");
-			// 配列の表示を行う。
-			printArray(arrayNumber);
+			System.out.println("末尾の要素を削除しました。");
 		}
+		// 配列から要素を削除する
+		aryRmv(arrayNumber,deleteIndex);
+		// 削除後の配列の表示を行う。
+		System.out.print("削除後の配列：");
+		// 配列の表示を行う。
+		printArray(arrayNumber);
+		
 	}
 
 }
