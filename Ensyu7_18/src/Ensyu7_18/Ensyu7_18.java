@@ -12,7 +12,7 @@ import java.util.Scanner;
 */
 public class Ensyu7_18 {
 	
-		/*
+	/*
 	 * 関数名：inputInteger
 	 * 概要：「(引数の文字)：」と表示し、その後に整数値の入力を求め、その値を返却する。
 	 * 引数：outputWord … String型の表示に使う文字列。
