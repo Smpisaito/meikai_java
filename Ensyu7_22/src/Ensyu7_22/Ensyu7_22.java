@@ -1,6 +1,7 @@
 // パッケージの宣言
 package Ensyu7_22;
 
+//入力操作を行うときにクラスの宣言の前に置く。
 import java.util.Scanner;
 
 /*
@@ -74,7 +75,7 @@ public class Ensyu7_22 {
 		System.out.println("各要素に値を入れてください。");
 		// 配列の要素数をもとにループする。
 		for (int loopNumber = 0; loopNumber < arrayNumber.length; loopNumber++) {
-			// 全ての要素の値を合計する。
+			// 全ての要素の値を入力する。
 			arrayNumber[loopNumber] = inputInteger("[" + loopNumber + "]");
 		}
 	}
