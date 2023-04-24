@@ -5,10 +5,10 @@ package Ensyu7_17;
 import java.util.Scanner;
 
 /*
-* クラス名：
-* 概要：
+* クラス名：Ensyu7_17
+* 概要：演習7-17クラス
 * 作成者：S.Saito
-* 作成日：
+* 作成日：2023.04.24
 */
 public class Ensyu7_17 {
 
@@ -107,7 +107,7 @@ public class Ensyu7_17 {
 		
 	/*
 	 * 関数名：main
-	 * 概要：配列の要素数と各要素の値を入力し、その値の最小値を表示する。
+	 * 概要：配列の要素数と各要素の値を入力し、その後に検索値を入力する。入力した値と一致する一番末尾の要素のインデックスを示す。
 	 * 引数：なし
 	 * 戻り値：なし
 	 * 作成者：S.Saito
@@ -123,7 +123,7 @@ public class Ensyu7_17 {
 		// 探索する値を決める。
 		int searchNumber = inputInteger("探索する値");
 		
-		// 配列の全要素の値の最小値を求める。
+		// 配列の全要素の検索をする。
 		int keyPlase = linearSearchR(arrayNumber,searchNumber);
 		// 値が-1の時、値が見つからなかった場合の分岐
 		if (keyPlase == -1) {
@@ -131,7 +131,7 @@ public class Ensyu7_17 {
 			System.out.println("その値の要素は存在しませんでした。");
 		// それ以外、値が見つかった場合の分岐。
 		} else {
-			// 配列の値の最小値を表示する。
+			// 一致した最も末尾側の要素のインデックスを表示する。
 			System.out.println("その値は配列の [" + keyPlase + "] にあります。");
 		}
 	}
