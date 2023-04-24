@@ -1,6 +1,7 @@
 // パッケージの宣言
 package Ensyu7_15;
 
+//入力操作を行うときにクラスの宣言の前に置く。
 import java.util.Scanner;
 
 /*
