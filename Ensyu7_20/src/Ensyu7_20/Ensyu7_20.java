@@ -130,7 +130,7 @@ public class Ensyu7_20 {
 	}
 	
 	/*
-	 * 関数名：aryInt
+	 * 関数名：aryIns
 	 * 概要：配列aからidxがインデックスになる要素に値xを挿入する。挿入先に入っている値以後の全要素を後ろにずらして行う。
 	 *       このとき、ずらす先がない末尾の要素は削除する。変数名・引数名は指定のものを用いる。
 	 * 引数：a[] … 挿入を行う配列。
@@ -140,7 +140,7 @@ public class Ensyu7_20 {
 	 * 作成者：S.Saito
 	 * 作成日：2023.04.24
 	 */
-	static void aryRmvN(int[] a, int idx, int x) {
+	static void aryIns(int[] a, int idx, int x) {
 		
 		// インデックスの値から配列の末尾から挿入指定先の要素のひとつ前までループする。
 		for (int loopNumber = a.length - 1; loopNumber > idx; loopNumber--) {
@@ -173,7 +173,7 @@ public class Ensyu7_20 {
 		// 挿入したい値を指定する。(整数値自由)
 		int insertNumber = inputInteger("要素に挿入したい値");
 		// 入力値をもとに挿入を行う。
-		aryRmvN(arrayNumber, deleteIndex, insertNumber);
+		aryIns(arrayNumber, deleteIndex, insertNumber);
 		// 挿入後の配列を表示する。
 		printArray(arrayNumber);
 	}
