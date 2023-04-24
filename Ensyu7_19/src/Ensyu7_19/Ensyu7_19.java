@@ -143,7 +143,7 @@ public class Ensyu7_19 {
 		
 		// インデックスの値から配列の末尾よりひとつ前までループする。
 		for (int loopNumber = idx; loopNumber < a.length - n; loopNumber++) {
-			// 一つ後ろの要素の値を入れる。
+			// 後ろの要素の値を入れる。
 			a[loopNumber] = a[loopNumber + n];
 		}
 		
@@ -151,11 +151,12 @@ public class Ensyu7_19 {
 	
 	/*
 	 * 関数名：main
-	 * 概要：
+	 * 概要：配列から指定の範囲の要素を削除する。削除する要素より後ろの全要素を前方にずらすことで削除をする。
+	 *       この削除で移動されずに残る末尾側の要素はそのままの値を残す。
 	 * 引数：なし
 	 * 戻り値：なし
 	 * 作成者：S.Saito
-	 * 作成日：
+	 * 作成日：2023.04.24
 	 */
 	public static void main(String[] args){
 		// 要素数の入力を行う。(1以上)
