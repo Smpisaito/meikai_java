@@ -5,10 +5,10 @@ package Ensyu7_21;
 import java.util.Scanner;
 
 /*
-* クラス名：
-* 概要：
+* クラス名：Ensyu7_21
+* 概要：演習7-21クラス
 * 作成者：S.Saito
-* 作成日：
+* 作成日：2023.04.24
 */
 public class Ensyu7_21 {
 	
@@ -75,7 +75,7 @@ public class Ensyu7_21 {
 		System.out.println("各要素に値を入れてください。");
 		// 配列の要素数をもとにループする。
 		for (int loopNumber = 0; loopNumber < arrayNumber.length; loopNumber++) {
-			// 全ての要素の値を合計する。
+			// 全ての要素の値を入力する。
 			arrayNumber[loopNumber] = inputInteger("[" + loopNumber + "]");
 		}
 	}
