@@ -170,8 +170,14 @@ public class Ensyu7_19 {
 		int deleteIndex = inputRange("削除する要素範囲の先頭のインデックス", 0 , arrayElements - 1);
 		// 削除したい要素範囲を指定する。(1以上要素‐先頭の要素のインデックス以下)
 		int deleteRange = inputRange("削除する要素の範囲", 1, arrayElements - deleteIndex);
+		
 		// 入力値をもとに削除を行う。
 		aryRmvN(arrayNumber, deleteIndex, deleteRange);
+		// 削除する要素が末尾までの範囲の時の分岐
+				if (arrayElements == deleteIndex + deleteRange) {
+					// 最後の要素を削除したことを示す表示をする。
+					System.out.println("末尾までの要素を削除しました。");
+				}
 		// 削除後の配列を表示する。
 		printArray(arrayNumber);
 	}
