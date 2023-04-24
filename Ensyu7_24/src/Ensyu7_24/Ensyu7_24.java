@@ -75,7 +75,7 @@ public class Ensyu7_24 {
 		System.out.println("各要素に値を入れてください。");
 		// 配列の要素数をもとにループする。
 		for (int loopNumber = 0; loopNumber < arrayNumber.length; loopNumber++) {
-			// 全ての要素の値を合計する。
+			// 全ての要素の値を入力する。
 			arrayNumber[loopNumber] = inputInteger("[" + loopNumber + "]");
 		}
 	}
