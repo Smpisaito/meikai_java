@@ -256,10 +256,11 @@ public class Ensyu7_27 {
 		if (getAdd == true) {
 			// xの行列を表示することを示す
 			System.out.println("xの行列を表示します。");
-			// 行列の和を表示する
+			// 行列を表示する
 			printArrays(arrayFirst);
+			// yの行列を表示することを示す
 			System.out.println("yの行列を表示します。");
-			// 行列の和を表示する
+			// 行列を表示する
 			printArrays(arraySecond);
 			// 行列の和を表示することを示す。
 			System.out.println("xとyの行列の和zを表示します。");
