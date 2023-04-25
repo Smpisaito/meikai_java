@@ -178,7 +178,7 @@ public class Ensyu7_28 {
 	 * 作成日：2023.04.25
 	 */
 	static int[][] addMatrix(int[][] x, int[][] y){
-		// 戻り値を設定する。列数などが同じになるようにxを代入する。
+		// 戻り値を設定する。同じになるようにxの行数を代入する。
 		int[][] addArray = new int[x.length][];
 		// 列数を移すループ
 		for (int loopNumber = 0; loopNumber < x.length;loopNumber++) {
