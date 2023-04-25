@@ -81,7 +81,7 @@ public class Ensyu7_26 {
 	}
 	
 	/*
-	 * 関数名：inpurRange
+	 * 関数名：inputRange
 	 * 概要：「(引数の文字)：」と表示し、その後に整数値の入力を求める。最小値となる引数の値以上の整数値が入れられるまでループし、最終的な値を返却する。
 	 * 引数：outputWord … String型の表示に使う文字列。
 	 *       lowerNumber … 入力する値の最小値
@@ -140,7 +140,7 @@ public class Ensyu7_26 {
 	 * 作成者：S.Saito
 	 * 作成日：2023.04.25
 	 */
-	static int[] arrayRmv0fN(int[] a, int idx, int x) {
+	static int[] arrayIns0fN(int[] a, int idx, int x) {
 		//戻り値をつくる。
 		int[] deleteNumber = new int[a.length + 1];
 		
@@ -187,7 +187,7 @@ public class Ensyu7_26 {
 		// 挿入する要素の値を決める。
 		int inputNumber = inputInteger("挿入する要素の値");
 		// 挿入を行う。
-		int[] arrayInput = arrayRmv0fN(arrayNumber, inputIndex, inputNumber);
+		int[] arrayInput = arrayIns0fN(arrayNumber, inputIndex, inputNumber);
 		
 		// 配列であることを示す表示をする。
 		System.out.print("挿入後の配列：{ ");
