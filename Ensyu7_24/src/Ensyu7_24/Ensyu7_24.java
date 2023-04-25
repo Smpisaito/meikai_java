@@ -142,7 +142,7 @@ public class Ensyu7_24 {
 	static int[] arrayRmv0f(int[] a, int idx) {
 		
 		// 引数の配列より要素数が1少ない配列をつくる。
-		int[] deleteArray = new int[a.length];
+		int[] deleteArray = new int[a.length - 1];
 		// 要素の入力を行うループ。
 		for (int loopNumber = 0; loopNumber < a.length - 1; loopNumber++) {
 			// 変数loopNumberが削除する要素以上の時の分岐
@@ -188,6 +188,8 @@ public class Ensyu7_24 {
 			int deleteIndex = inputRange("削除する要素のインデックス", 0, arrayElements - 1);
 			// 削除後の配列をつくる。
 			int[] deleteArray = arrayRmv0f(arrayNumber, deleteIndex);
+			// 削除後の配列を表示する。
+			printArray(deleteArray);
 		}
 		
 	}
