@@ -196,19 +196,38 @@ public class Ensyu7_27 {
 				}
 			}
 		}
-		// 三つの配列が等しいとき
-		if (getAdd == true) {
-			// xとyの値の和をzに入れるループ。
-			for(int firstLoop = 0; firstLoop < x.length; firstLoop++) {
+		// 戻り値を返す。
+		return getAdd;
+	}
+	
+	/*
+	 * 関数名：addMatrix
+	 * 概要：三つの配列の行数と列数が同一のときに加算を行いtureを返し、行数か列数が異なるときは加算せずfalseを返す。変数名・引数名は指定のものを用いる。
+	 * 引数：x[][] … 配列の一つ目
+	 *       y[][] … 配列の二つ目
+	 *       z[][] … 配列の三つ目
+	 * 戻り値：getAdd … 加算ができたらtrue、できなかったらfalseを返す。
+	 * 作成者：S.Saito
+	 * 作成日：2023.04.25
+	 */
+	static int[][] addThreeArrays(int[][] x, int[][] y, int[][] z) {
+		// 戻り値となる行列をつくる。行数をxと同じにする。
+		int[][] addNumber = new int[x.length][];
+		// 全ての行を確認する。
+		for(int firstLoop = 0; firstLoop < x.length; firstLoop++) {
+			// 行ごとの列数を入れる。
+			addNumber[firstLoop] = new int[x[firstLoop].length];
+		}
+		// xとyの値の和をzに入れるループ。
+		for(int firstLoop = 0; firstLoop < x.length; firstLoop++) {
+			// xとyの和をzに入れるループ
+			for(int secondLoop = 0; secondLoop < x[firstLoop].length; secondLoop++) {
 				// xとyの和をzに入れるループ
-				for(int secondLoop = 0; secondLoop < x[firstLoop].length; secondLoop++) {
-					// xとyの和をzに入れるループ
-					z[firstLoop][secondLoop] = x[firstLoop][secondLoop] + y[firstLoop][secondLoop];
-				}
+				addNumber[firstLoop][secondLoop] = z[firstLoop][secondLoop] + x[firstLoop][secondLoop] + y[firstLoop][secondLoop];
 			}
 		}
 		// 戻り値を返す。
-		return getAdd;
+		return addNumber;
 	}
 	
 	/*
@@ -238,7 +257,7 @@ public class Ensyu7_27 {
 		int[][] arraySecond = new int[secondElements][];
 		// 行ごとの列数の入力をする。
 		printArray(arraySecond);
-		// 行列x(表記)であることを示す表示をする。
+		// 行列y(表記)であることを示す表示をする。
 		System.out.print("yの");
 		// 行列の入力を行う。
 		inputArrays(arraySecond);
@@ -249,11 +268,17 @@ public class Ensyu7_27 {
 		int[][] arrayThird = new int[thirdElements][];
 		// 行ごとの列数の入力をする。
 		printArray(arrayThird);
+		// 行列z(表記)であることを示す表示をする。
+		System.out.print("zの");
+		// 行列の入力を行う。
+		inputArrays(arrayThird);
 		
 		// 同じ大きさの行列ならzにxとyの合計を出された上で。違う場合はfalseが返ってくる。
 		boolean getAdd = addMatrix(arrayFirst, arraySecond, arrayThird);
 		// getAddがtrueで返されたときの分岐。
 		if (getAdd == true) {
+			// 合計を示す配列をつくる。
+			int[][] addNumber = addThreeArrays(arrayFirst,arraySecond,arrayThird);
 			// xの行列を表示することを示す
 			System.out.println("xの行列を表示します。");
 			// 行列を表示する
@@ -262,10 +287,14 @@ public class Ensyu7_27 {
 			System.out.println("yの行列を表示します。");
 			// 行列を表示する
 			printArrays(arraySecond);
-			// 行列の和を表示することを示す。
-			System.out.println("xとyの行列の和zを表示します。");
-			// 行列の和を表示する
+			// zの行列を表示することを示す
+			System.out.println("zの行列を表示します。");
+			// 行列を表示する
 			printArrays(arrayThird);
+			// 行列の和を表示することを示す。
+			System.out.println("xとyとzの行列の和を表示します。");
+			// 行列の和を表示する
+			printArrays(addNumber);
 		// getAddがfalseで返された場合の分岐。
 		} else {
 			//　行列の行数や列数が異なることを示す。
