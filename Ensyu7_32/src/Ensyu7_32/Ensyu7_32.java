@@ -170,73 +170,73 @@ public class Ensyu7_32 {
 	
 	/*
 	 * 関数名：printBits
-	 * 概要：byte型の整数のビット構造の内容を表示する。
-	 * 引数：byteNumber … byte型の整数値
+	 * 概要：byte型の整数のビット構造の内容を表示する。関数名・引数名は指定のものを使う。
+	 * 引数：x … byte型の整数値
 	 * 戻り値：なし
 	 * 作成者：S.Saito
 	 * 作成日：2023.04.26
 	 */
-	static void printBits(byte byteNumber) {
+	static void printBits(byte x) {
 		// byte型のビット数を示すfinal変数。
 		final byte BYTEBITS = 8;
 		// byte型(8bit)の全てを確認する。
 		for (byte loopNumber = BYTEBITS - 1; loopNumber >= 0; loopNumber--) {
 			// シフトしたときの1の位の値が1なら1、0なら0を表示することでビットを表示する。
-			System.out.print(((byteNumber >>> loopNumber & 1) == 1) ? '1' : '0');
+			System.out.print(((x >>> loopNumber & 1) == 1) ? '1' : '0');
 		}
 	}
 	
 	/*
 	 * 関数名：printBits
-	 * 概要：short型の整数のビット構造の内容を表示する。
-	 * 引数：shortNumber … short型の整数値
+	 * 概要：short型の整数のビット構造の内容を表示する。関数名・引数名は指定のものを使う。
+	 * 引数：x … short型の整数値
 	 * 戻り値：なし
 	 * 作成者：S.Saito
 	 * 作成日：2023.04.26
 	 */
-	static void printBits(short shortNumber) {
+	static void printBits(short x) {
 		// short型のビット数を示すfinal変数。
 		final short SHORTBITS = 16;
 		// short型(16bit)の全てを確認する。
 		for (short loopNumber = SHORTBITS - 1;loopNumber >= 0; loopNumber--) {
 			// シフトしたときの1の位の値が1なら1、0なら0を表示することでビットを表示する。
-			System.out.print(((shortNumber >>> loopNumber & 1) == 1) ? '1' : '0');
+			System.out.print(((x >>> loopNumber & 1) == 1) ? '1' : '0');
 		}
 	}
 	
 	/*
 	 * 関数名：printBits
-	 * 概要：int型の整数のビット構造の内容を表示する。
-	 * 引数：integerNumber … int型の整数値
+	 * 概要：int型の整数のビット構造の内容を表示する。関数名・引数名は指定のものを使う。
+	 * 引数：x … int型の整数値
 	 * 戻り値：なし
 	 * 作成者：S.Saito
 	 * 作成日：2023.04.26
 	 */
-	static void printBits(int integerNumber) {
+	static void printBits(int x) {
 		// int型のビット数を示すfinal変数。
 		final int INTBITS = 32;
 		// int型(32bit)の全てを確認する。
 		for (int loopNumber = INTBITS - 1;loopNumber >= 0; loopNumber--) {
 			// シフトしたときの1の位の値が1なら1、0なら0を表示することでビットを表示する。
-			System.out.print(((integerNumber >>> loopNumber & 1) == 1) ? '1' : '0');
+			System.out.print(((x >>> loopNumber & 1) == 1) ? '1' : '0');
 		}
 	}
 	
 	/*
 	 * 関数名：printBits
-	 * 概要：long型の整数のビット構造の内容を表示する。
-	 * 引数：longNumber … long型の整数値
+	 * 概要：long型の整数のビット構造の内容を表示する。関数名・引数名は指定のものを使う。
+	 * 引数：x … long型の整数値
 	 * 戻り値：なし
 	 * 作成者：S.Saito
 	 * 作成日：2023.04.26
 	 */
-	static void printBits(long longNumber) {
+	static void printBits(long x) {
 		// long型のビット数を示すfinal変数。
 		final long LONGBITS = 64;
 		// long型(64bit)の全てを確認する。
 		for (long loopNumber = LONGBITS - 1;loopNumber >= 0; loopNumber--) {
 			// シフトしたときの1の位の値が1なら1、0なら0を表示することでビットを表示する。
-			System.out.print(((longNumber >>> loopNumber & 1) == 1) ? '1' : '0');
+			System.out.print(((x >>> loopNumber & 1) == 1) ? '1' : '0');
 		}
 	}
 	
