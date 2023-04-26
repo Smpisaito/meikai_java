@@ -119,7 +119,7 @@ public class Ensyu7_29 {
 	}
 	
 	/*
-	 * 関数名：inpurRange
+	 * 関数名：inputRange
 	 * 概要：「(引数の文字)：」と表示し、その後に整数値の入力を求める。最小値となる引数の値以上の整数値が入れられるまでループし、最終的な値を返却する。
 	 * 引数：outputWord … String型の表示に使う文字列。
 	 *       lowerNumber … 入力する値の最小値
@@ -198,11 +198,11 @@ public class Ensyu7_29 {
 
 	/*
 	 * 関数名：main
-	 * 概要：
+	 * 概要：二次元配列を作成して、同じ行数列数で同じ要素の値が入った配列をつくる。
 	 * 引数：なし
 	 * 戻り値：なし
 	 * 作成者：S.Saito
-	 * 作成日：
+	 * 作成日：2023.04.26
 	 */
 	public static void main(String[] args){
 		// 行数a(表記)を入力する。
