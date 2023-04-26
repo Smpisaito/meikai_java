@@ -180,11 +180,11 @@ public class Ensyu7_31 {
 		// 戻り値を初期値xとしてつくる。
 		int absoluteValue = x;
 		// int型で-1のfinal変数をつくる。
-		final int MINUSNUMBER = -1;
+		final int MINUS_NUMBER = -1;
 		// 戻り値が負の値のときの分岐。
 		if (absoluteValue < 0) {
 			// 戻り値に-1をかけて正にする
-			absoluteValue *= MINUSNUMBER;
+			absoluteValue *= MINUS_NUMBER;
 		}
 		// 戻り値を返す。
 		return absoluteValue;
@@ -202,11 +202,11 @@ public class Ensyu7_31 {
 		// 戻り値を初期値xとしてつくる。
 		long absoluteValue = x;
 		// long型で-1のfinal変数をつくる。
-		final int MINUSNUMBER = -1;
+		final int MINUS_NUMBER = -1;
 		// 戻り値が負の値のときの分岐。
 		if (absoluteValue < 0) {
 			// 戻り値に-1をかけて正にする
-			absoluteValue *= MINUSNUMBER;
+			absoluteValue *= MINUS_NUMBER;
 		}
 		// 戻り値を返す。
 		return absoluteValue;
@@ -224,11 +224,11 @@ public class Ensyu7_31 {
 		// 戻り値を初期値xとしてつくる。
 		float absoluteValue = x;
 		// int型で-1のfinal変数をつくる。
-		final int MINUSNUMBER = -1;
+		final int MINUS_NUMBER = -1;
 		// 戻り値が負の値のときの分岐。
 		if (absoluteValue < 0) {
 			// 戻り値に-1をかけて正にする
-			absoluteValue *= MINUSNUMBER;
+			absoluteValue *= MINUS_NUMBER;
 		}
 		// 戻り値を返す。
 		return absoluteValue;
@@ -246,11 +246,11 @@ public class Ensyu7_31 {
 		// 戻り値を初期値xとしてつくる。
 		double absoluteValue = x;
 		// int型で-1のfinal変数をつくる。
-		final int MINUSNUMBER = -1;
+		final int MINUS_NUMBER = -1;
 		// 戻り値が負の値のときの分岐。
 		if (absoluteValue < 0) {
 			// 戻り値に-1をかけて正にする
-			absoluteValue *= MINUSNUMBER;
+			absoluteValue *= MINUS_NUMBER;
 		}
 		// 戻り値を返す。
 		return absoluteValue;
