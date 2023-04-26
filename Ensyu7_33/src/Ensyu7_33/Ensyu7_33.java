@@ -258,6 +258,7 @@ public class Ensyu7_33 {
 	 * 作成日：2023.04.26
 	 */
 	static void printArray(int[][] a) {
+		// 列ごとの桁数の最大値を入れた配列をつくる。
 		int[] digitsHighest = digitsHighest(a);
 		// 全行で行うことを示すループ。
 		for(int firstLoop = 0; firstLoop < a.length; firstLoop++) {
@@ -395,11 +396,12 @@ public class Ensyu7_33 {
 	
 	/*
 	 * 関数名：main
-	 * 概要：
+	 * 概要：int型の一次元配列と二次元配列をつくり、それぞれ表示する。一次元配列では要素間に一文字分のスペースを空け、二次元配列では
+	 *       各列の数値の戦闘がそろうように最低限のスペースを開ける。
 	 * 引数：なし
 	 * 戻り値：なし
 	 * 作成者：S.Saito
-	 * 作成日：
+	 * 作成日：2023.04.26
 	 */
 	public static void main(String[] args){
 		// 一次元配列をつくる
