@@ -178,9 +178,9 @@ public class Ensyu7_32 {
 	 */
 	static void printBits(byte x) {
 		// byte型のビット数を示すfinal変数。
-		final byte BYTEBITS = 8;
+		final byte BYTE_BITS = 8;
 		// byte型(8bit)の全てを確認する。
-		for (byte loopNumber = BYTEBITS - 1; loopNumber >= 0; loopNumber--) {
+		for (byte loopNumber = BYTE_BITS - 1; loopNumber >= 0; loopNumber--) {
 			// シフトしたときの1の位の値が1なら1、0なら0を表示することでビットを表示する。
 			System.out.print(((x >>> loopNumber & 1) == 1) ? '1' : '0');
 		}
@@ -196,9 +196,9 @@ public class Ensyu7_32 {
 	 */
 	static void printBits(short x) {
 		// short型のビット数を示すfinal変数。
-		final short SHORTBITS = 16;
+		final short SHORT_BITS = 16;
 		// short型(16bit)の全てを確認する。
-		for (short loopNumber = SHORTBITS - 1;loopNumber >= 0; loopNumber--) {
+		for (short loopNumber = SHORT_BITS - 1;loopNumber >= 0; loopNumber--) {
 			// シフトしたときの1の位の値が1なら1、0なら0を表示することでビットを表示する。
 			System.out.print(((x >>> loopNumber & 1) == 1) ? '1' : '0');
 		}
@@ -214,9 +214,9 @@ public class Ensyu7_32 {
 	 */
 	static void printBits(int x) {
 		// int型のビット数を示すfinal変数。
-		final int INTBITS = 32;
+		final int INT_BITS = 32;
 		// int型(32bit)の全てを確認する。
-		for (int loopNumber = INTBITS - 1;loopNumber >= 0; loopNumber--) {
+		for (int loopNumber = INT_BITS - 1;loopNumber >= 0; loopNumber--) {
 			// シフトしたときの1の位の値が1なら1、0なら0を表示することでビットを表示する。
 			System.out.print(((x >>> loopNumber & 1) == 1) ? '1' : '0');
 		}
@@ -232,9 +232,9 @@ public class Ensyu7_32 {
 	 */
 	static void printBits(long x) {
 		// long型のビット数を示すfinal変数。
-		final long LONGBITS = 64;
+		final long LONG_BITS = 64;
 		// long型(64bit)の全てを確認する。
-		for (long loopNumber = LONGBITS - 1;loopNumber >= 0; loopNumber--) {
+		for (long loopNumber = LONG_BITS - 1;loopNumber >= 0; loopNumber--) {
 			// シフトしたときの1の位の値が1なら1、0なら0を表示することでビットを表示する。
 			System.out.print(((x >>> loopNumber & 1) == 1) ? '1' : '0');
 		}
