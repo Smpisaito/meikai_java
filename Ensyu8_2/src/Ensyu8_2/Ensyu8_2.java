@@ -284,6 +284,8 @@ public class Ensyu8_2 {
 			
 			// スペックの確認をする。
 			if (choiceNumber == 0 ) {
+				// 改行を入れる。
+				System.out.println();
 				// 車のスペックの表示をする。
 				myCar.putSpec();
 			// 目標座標を参照して移動する。
