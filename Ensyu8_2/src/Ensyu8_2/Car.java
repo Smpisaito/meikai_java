@@ -74,19 +74,19 @@ public class Car {
 	// 車のスペックを表示する(名前、ナンバー、各サイズ、タンク容量、燃費)。
 	void putSpec() {
 		// 車の名前の表示をする。
-		System.out.println();
+		System.out.println("名前：" + carName);
 		// 車のナンバーの表示をする。
-		System.out.println();
+		System.out.println("ナンバー：" + carNumber);
 		// 車の幅の表示をする。
-		System.out.println();
+		System.out.println("幅：" + carWidth);
 		// 車の高さの表示をする。
-		System.out.println();
+		System.out.println("高さ：" + carHeight);
 		// 車の長さの表示をする。
-		System.out.println();
+		System.out.println("長さ：" + carLength);
 		// 車のタンク容量を表示する。
-		System.out.println();
+		System.out.println("タンク容量：" + carTank);
 		// 車の燃費の表示をする。
-		System.out.println();
+		System.out.println("燃費：" + carCost);
 	}
 
 	// 現在の燃料で入力した座標が移動可能な距離かを判断する。
@@ -121,7 +121,7 @@ public class Car {
 	}
 	
 	// 座標まで移動する。移動できない場合はfalseを返す。
-	boolean moveCar (double[] moveTarget) {
+	void moveCar (double[] moveTarget) {
 		// 目標地点までに直線距離をもとめる。
 		double distanceTarget = Math.sqrt((moveTarget[0]-coordinateX)*(moveTarget[0]-coordinateX)+(moveTarget[1]-coordinateY)*(moveTarget[1]-coordinateY));
 		// 目標地点まで移動できるときの分岐。
@@ -132,17 +132,12 @@ public class Car {
 			coordinateX = moveTarget[0];
 			// x座標を移動した分だけ加える。
 			coordinateY = moveTarget[1];
-			// trueを返す。
-			return true;
 		// 目標地点まで移動できない時の分岐。
-		} else {
-			// falseを返す。
-			return false;
 		}
 	}
 	
 	// 座標の移動距離の分だけ移動する。移動できない場合はfalseを返す。
-	boolean moveCar (double distanceX, double distanceY) {
+	void moveCar (double distanceX, double distanceY) {
 		// 移動の方向をもとに直線距離を求める
 		double distanceTarget = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
 		// 目標距離を移動できるときの分岐。
@@ -153,14 +148,8 @@ public class Car {
 			coordinateX += distanceX;
 			// x座標を移動した分だけ加える。
 			coordinateY += distanceY;
-			// trueを返す。
-			return true;
 		// 移動できない時の分岐。
-		} else {
-			// falseを返す。
-			return false;
 		}
-		
 	}
 	
 	// 給油を行う。

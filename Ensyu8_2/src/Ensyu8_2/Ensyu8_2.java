@@ -278,12 +278,16 @@ public class Ensyu8_2 {
 			// 現在の座標や残り燃料などの状態を表示する。
 			System.out.println("現在地(" + myCar.getCoordinateX() + ", " + myCar.getCoordinateY() +  ")	・残り燃料 " + myCar.getFuel());
 			// 行える動作を表示する。
-			System.out.println("目標座標を決めて移動する … 1\n軸ごとの移動距離を決めて移動する … 2\n給油を行う … 3\n終了する … 4");
+			System.out.println("車のスペックの確認をする。 … 0\n目標座標を決めて移動する … 1\n軸ごとの移動距離を決めて移動する … 2\n給油を行う … 3\n終了する … 4");
 			// 目的の値を入力する。
-			int choiceNumber = inputRange("目的に合った番号を入力してください。",1,4);
+			int choiceNumber = inputRange("目的に合った番号を入力してください。",0,4);
 			
+			// スペックの確認をする。
+			if (choiceNumber == 0 ) {
+				// 車のスペックの表示をする。
+				myCar.putSpec();
 			// 目標座標を参照して移動する。
-			if (choiceNumber == 1) {
+			} else if (choiceNumber == 1) {
 				// xとyの二つの座標で示される目標を示す配列をいれる
 				double[] moveTarget = new double[2];
 				// xの座標の入力を求める。
@@ -293,7 +297,7 @@ public class Ensyu8_2 {
 				// 座標まで移動できる時の分岐
 				if (myCar.checkMove(moveTarget)) {
 					// 座標まで移動する。
-					boolean moveBoolean = myCar.moveCar(moveTarget);
+					myCar.moveCar(moveTarget);
 				// 移動できないときの分岐。
 				} else {
 					// 燃料が足りないことを示す。
@@ -309,7 +313,7 @@ public class Ensyu8_2 {
 				// 座標まで移動できる時の分岐
 				if (myCar.checkMove (distanceX,distanceY)) {
 					// 座標まで移動する。
-					boolean moveBoolean = myCar.moveCar(distanceX,distanceY);
+					myCar.moveCar(distanceX,distanceY);
 				// 移動できないときの分岐。
 				} else {
 					// 燃料が足りないことを示す。
