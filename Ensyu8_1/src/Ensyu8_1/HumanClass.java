@@ -53,13 +53,13 @@ public class HumanClass {
 	}
 	
 	// 身長の情報を新しくする
-	void newHeight(float nowHeight) {
+	void updateHeight(float nowHeight) {
 		// 身長の情報を書き換える。
 		centimetreHeight = nowHeight;
 	}
 	
 	// 体重の情報を新しくする
-	void newWeight(float nowWeight) {
+	void updateWeight(float nowWeight) {
 		// 体重の情報を書き換える。
 		kilogramWeight = nowWeight;
 	}

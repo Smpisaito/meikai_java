@@ -31,6 +31,10 @@ public class Ensyu8_1 {
 		String inputName = standardInput.next();
 		// 身長を入れる変数をつくる。
 		float inputHeight = 0;
+		// final変数で身長の入力下限値100をとる。
+		final short LOW_HEIGHT = 100;
+		// final変数で身長の入力上限値350をとる。
+		final short HIGH_HEIGHT = 350;
 		// 身長が適切な値ではないときループする。
 		do {
 			// インスタンスの初期化に必要な身長の情報の入力を求める。
@@ -38,9 +42,13 @@ public class Ensyu8_1 {
 			// 身長の入力を行う。
 			inputHeight = standardInput.nextFloat();
 		// 身長が100未満、もしくは350より大きいときは再入力させる。
-		} while (inputHeight < 100 || inputHeight > 350);
+		} while (inputHeight < LOW_HEIGHT || inputHeight > HIGH_HEIGHT );
 		// 体重を入れる初期値をつくる。
 		float inputWeight = 0;
+		// final変数で体重の入力下限値30をとる。
+		final short LOW_WEIGHT = 30;
+		// final変数で体重の入力上限値250をとる。
+		final short HIGH_WEIGHT = 250;
 		// 体重が適切な値ではないときループする。
 		do {
 			// インスタンスの初期化に必要な体重の情報の入力を求める。
@@ -48,13 +56,17 @@ public class Ensyu8_1 {
 			// 体重の入力を行う。
 			inputWeight = standardInput.nextFloat();
 		// 体重が30未満、もしくは250より大きいときは再入力させる。
-		} while (inputWeight < 30 || inputWeight > 250);
+		} while (inputWeight < LOW_WEIGHT || inputWeight > HIGH_WEIGHT );
 		// インスタンスの初期化に必要な生年月日の情報の入力を求める。
 		System.out.print("生年月日・年：");
+		// final変数で今年の値をとる。
+		final short NOW_YEAR = 2023;
+		// fnal変数で生年月日の範囲として150を取る。
+		final short BIRTH_RANGE = 150;
 		// 生年月日の年の情報の入力を行う。
 		short inputYear = standardInput.nextShort();
 		// 年の情報の入力がおかしいときループに入る。
-		while (inputYear < 1900 || inputYear > 2023) {
+		while (inputYear < NOW_YEAR - BIRTH_RANGE || inputYear > NOW_YEAR ){
 			// 年の情報の入力を再度求める。
 			System.out.print("          年：");
 			// 年の情報の入力を行う。
@@ -62,6 +74,10 @@ public class Ensyu8_1 {
 		}
 		// 月の値を入れる変数をつくる。
 		short inputMonth = 0;
+		// final変数で月の下限値をとる。
+		final short LOW_MONTH = 1;
+		// final変数で月の上限値をとる。
+		final short HIGH_MONTH = 12;
 		// 月の値がおかしいときループする。
 		do {
 			// 生年月日の月の入力を求める。
@@ -69,28 +85,40 @@ public class Ensyu8_1 {
 			// 生年月日の月の情報の入力を行う。
 			inputMonth = standardInput.nextShort();
 		// 月の値が1未満、もしくは12より大きい場合ループする。
-		} while (inputMonth < 1 || inputMonth > 12);
+		} while (inputMonth < LOW_MONTH || inputMonth > HIGH_MONTH);
 		// 日の上限値の変数をつくる。
 		int dayLimit = 0;
 		// 二月のときの分岐。
 		if (inputMonth == 2) {
+			// 4の値のfinal変数
+			final int FOURTH_NUMBER = 4;
 			// 年が4の倍数の時の分岐。
-			if (inputYear % 4 == 0) {
+			if (inputYear % FOURTH_NUMBER == 0) {
+				// 100の値のfinal変数
+				final int ONE_HUNDRED = 100;
 				// 年が100の倍数の時の分岐。
-				if (inputYear % 100 == 0) {
+				if (inputYear % ONE_HUNDRED == 0) {
+					// 400の値のfinal変数
+					final int FOUR_HUNDRED = 400;
 					// 年が400の倍数の分岐。
-					if (inputYear % 400 == 0) {
+					if (inputYear % FOUR_HUNDRED == 0) {
 						// 上限を29にする。
 						dayLimit = 29;
+					// それ以外の時の分岐
+					} else {
+						// 上限を28にする。
+						dayLimit = 28;
 					}
-					// 上限を28にする。
-					dayLimit = 28;
+				// それ以外の時の分岐
+				} else {
+					// 上限を29にする。
+					dayLimit = 29;
 				}
-				// 上限を29にする。
-				dayLimit = 29;
+			// それ以外の時の分岐
+			} else {
+				// 上限を28にする。
+				dayLimit = 28;
 			}
-			// 上限を28にする。
-			dayLimit = 28;
 		} else if (inputMonth == 1 || inputMonth == 3 || inputMonth == 5 || 
 				inputMonth == 7 || inputMonth == 8 || inputMonth == 10 || inputMonth == 12) {
 			// 上限を31にする。
@@ -149,9 +177,9 @@ public class Ensyu8_1 {
 					// 値を入力する。
 					nowHeight = standardInput.nextFloat();
 				// 身長が100未満、もしくは350より大きいときは再入力させる。
-				} while (inputHeight < 100 || inputHeight > 350);
+				} while (inputHeight < LOW_HEIGHT || inputHeight > HIGH_HEIGHT );
 				// 入力した値で身長のデータを代入する。
-				myDate.newHeight(nowHeight);
+				myDate.updateHeight(nowHeight);
 				
 			// 体重データの更新が選択された場合の分岐。
 			} else if (choiceNumber == 3) {
@@ -165,9 +193,9 @@ public class Ensyu8_1 {
 					// 値を入力する。
 					nowWeight = standardInput.nextFloat();
 				// 体重が30未満、もしくは250より大きいときは再入力させる。
-				} while (inputWeight < 30 || inputWeight > 250);
+				} while (inputWeight < LOW_WEIGHT || inputWeight > HIGH_WEIGHT );
 				// 入力した値で体重のデータを代入する。
-				myDate.newWeight(nowWeight);
+				myDate.updateWeight(nowWeight);
 				
 			// 終了が選択された場合の分岐。
 			} else {
