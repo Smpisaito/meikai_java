@@ -40,7 +40,15 @@ public class HumanClass {
 		
 	}
 	
-	// 登録情報を調べる
+	
+	/*
+	 * 関数名：getUser
+	 * 概要：登録情報を調べて表示する
+	 * 引数：なし
+	 * 戻り値：なし
+	 * 作成者：S.Saito
+	 * 作成日：2023.04.28
+	 */
 	void getUser() {
 		// 名前の情報を表示する。
 		System.out.println("登録名：" + userName);
@@ -52,13 +60,27 @@ public class HumanClass {
 		System.out.println("生年月日：" + birthYear + "/" + birthMonth + "/" + birthDay);
 	}
 	
-	// 身長の情報を新しくする
+	/*
+	 * 関数名：pdateHeight
+	 * 概要：身長の情報を新しくする
+	 * 引数：nowHeight … 新しい身長の情報
+	 * 戻り値：なし
+	 * 作成者：S.Saito
+	 * 作成日：2023.04.28
+	 */
 	void updateHeight(float nowHeight) {
 		// 身長の情報を書き換える。
 		centimetreHeight = nowHeight;
 	}
 	
-	// 体重の情報を新しくする
+	/*
+	 * 関数名：updateWeight
+	 * 概要：体重の情報を新しくする
+	 * 引数：nowWeight … 新しい体重の情報
+	 * 戻り値：なし
+	 * 作成者：S.Saito
+	 * 作成日：2023.04.28
+	 */
 	void updateWeight(float nowWeight) {
 		// 体重の情報を書き換える。
 		kilogramWeight = nowWeight;
