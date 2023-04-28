@@ -55,23 +55,53 @@ public class Car {
 
 	}
 
-	// x座標を調べる。
+	/*
+	 * 関数名：getCoordinateX
+	 * 概要：x座標を調べる。
+	 * 引数：なし
+	 * 戻り値：coordinateX … 現在地を示すx座標
+	 * 作成者：S.Saito
+	 * 作成日：2023.04.28
+	 */
 	double getCoordinateX() {
 		// x座標を返す。
 		return coordinateX;
 	}
-	// y座標を調べる。
+	
+	/*
+	 * 関数名：getCoordinateY
+	 * 概要：y座標を調べる。
+	 * 引数：なし
+	 * 戻り値：coordinateY … 現在地を示すy座標
+	 * 作成者：S.Saito
+	 * 作成日：2023.04.28
+	 */ 
 	double getCoordinateY() {
 		// x座標を返す。
 		return coordinateY;
 	}
-	// 現在の残り燃料を調べる。
+	
+	/*
+	 * 関数名：getFuel
+	 * 概要：現在の残り燃料を調べる。
+	 * 引数：なし
+	 * 戻り値：remainFuel … 残り燃料の値。
+	 * 作成者：S.Saito
+	 * 作成日：2023.04.28
+	 */ 
 	double getFuel() {
 		// 残り燃料を返す
 		return remainFuel;
 	}
 
-	// 車のスペックを表示する(名前、ナンバー、各サイズ、タンク容量、燃費)。
+	/*
+	 * 関数名：putSpec
+	 * 概要：車のスペックを表示する(名前、ナンバー、各サイズ、タンク容量、燃費)。
+	 * 引数：なし
+	 * 戻り値：なし
+	 * 作成者：S.Saito
+	 * 作成日：2023.04.28
+	 */ 
 	void putSpec() {
 		// 車の名前の表示をする。
 		System.out.println("名前：" + carName);
@@ -89,7 +119,15 @@ public class Car {
 		System.out.println("燃費：" + carCost);
 	}
 
-	// 現在の燃料で入力した座標が移動可能な距離かを判断する。
+	/*
+	 * 関数名：checkMove
+	 * 概要：現在の燃料で入力した座標が移動可能な距離かを判断する。
+	 * 引数：moveTarget … 移動先とする目標座標
+	 * 戻り値：(boolean型の値として)true … 移動可能
+	 *         (boolean型の値として)false … 移動不可能
+	 * 作成者：S.Saito
+	 * 作成日：2023.04.28
+	 */ 
 	boolean checkMove(double[] moveTarget) {
 		// 目標地点までに直線距離をもとめる。
 		double distanceTarget = Math.sqrt((moveTarget[0]-coordinateX)*(moveTarget[0]-coordinateX)+(moveTarget[1]-coordinateY)*(moveTarget[1]-coordinateY));
@@ -105,7 +143,16 @@ public class Car {
 		
 	}
 	
-	// 現在の燃料で入力した座標の移動距離が移動可能かを調べる。
+	/*
+	 * 関数名：checkMove
+	 * 概要：現在の燃料で入力した座標の移動距離が移動可能な距離かを判断する。
+	 * 引数：distanceX … x座標の移動方向
+	 *       distanceY … y座標の移動方向
+	 * 戻り値：(boolean型の値として)true … 移動可能
+	 *         (boolean型の値として)false … 移動不可能
+	 * 作成者：S.Saito
+	 * 作成日：2023.04.28
+	 */ 
 	boolean checkMove (double distanceX, double distanceY) {
 		// 移動の方向をもとに直線距離を求める
 		double distanceTarget = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
@@ -120,7 +167,14 @@ public class Car {
 		}
 	}
 	
-	// 座標まで移動する。移動できない場合はfalseを返す。
+	/*
+	 * 関数名：moveCar
+	 * 概要：座標まで移動する。
+	 * 引数：moveTarget … 移動先とする目標座標
+	 * 戻り値：なし
+	 * 作成者：S.Saito
+	 * 作成日：2023.04.28
+	 */ 
 	void moveCar (double[] moveTarget) {
 		// 目標地点までに直線距離をもとめる。
 		double distanceTarget = Math.sqrt((moveTarget[0]-coordinateX)*(moveTarget[0]-coordinateX)+(moveTarget[1]-coordinateY)*(moveTarget[1]-coordinateY));
@@ -136,7 +190,15 @@ public class Car {
 		}
 	}
 	
-	// 座標の移動距離の分だけ移動する。移動できない場合はfalseを返す。
+	/*
+	 * 関数名：moveCar
+	 * 概要：座標の移動距離の分だけ移動する。
+	 * 引数：distanceX … x座標の移動方向
+	 *       distanceY … y座標の移動方向
+	 * 戻り値：なし
+	 * 作成者：S.Saito
+	 * 作成日：2023.04.28
+	 */ 
 	void moveCar (double distanceX, double distanceY) {
 		// 移動の方向をもとに直線距離を求める
 		double distanceTarget = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
@@ -152,7 +214,15 @@ public class Car {
 		}
 	}
 	
-	// 給油を行う。
+	/*
+	 * 関数名：refuelTank
+	 * 概要：給油を行う。
+	 * 引数：refuelFuel … 入れようとしている燃料の量
+	 * 戻り値：(boolean型の値として)true … 給油可能
+	 *         (boolean型の値として)false … 給油不可能
+	 * 作成者：S.Saito
+	 * 作成日：2023.04.28
+	 */
 	boolean refuelTank(double refuelFuel) {
 		// 燃料タンクの中に納まる場合
 		if (refuelFuel + remainFuel <= carTank) {
