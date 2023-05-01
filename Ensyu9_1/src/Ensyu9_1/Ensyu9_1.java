@@ -53,7 +53,7 @@ public class Ensyu9_1 {
 		// 配列全ての表示を行うループ
 		for (int loopNumber = 0; loopNumber < secondHumans.length; loopNumber++) {
 			// 代入でインスタンスした配列の情報を表示する。
-			secondHumans[0].getUser();
+			secondHumans[loopNumber].getUser();
 		}
 	}
 }
