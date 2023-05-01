@@ -27,22 +27,83 @@ public class DayClass {
 	// コンストラクタ、他の年月日のコピー。
 	public DayClass(DayClass makeDay) {this(makeDay.dayYear,makeDay.dayMonth,makeDay.dayDate);}
 	
-	// 年を取得するゲッター
+	
+	// 各ゲッター
+	
+	/*
+	 * 関数名：getYear
+	 * 概要：年を取得するゲッター。
+	 * 引数：なし
+	 * 戻り値：dayYear … フィールドの年の値を返す。
+	 * 作成者：S.Saito
+	 * 作成日：2023.05.01
+	 */
 	public int getYear() { return dayYear;}
-	// 月を取得するゲッター
+	
+	/*
+	 * 関数名：getMonth
+	 * 概要：月を取得するゲッター。
+	 * 引数：なし
+	 * 戻り値：dayMonth … フィールドの月の値を返す。
+	 * 作成者：S.Saito
+	 * 作成日：2023.05.01
+	 */
 	public int getMonth() {return dayMonth;}
-	// 日を取得するゲッター
+	
+	/*
+	 * 関数名：getDate
+	 * 概要：日を取得するゲッター。
+	 * 引数：なし
+	 * 戻り値：dayDate … フィールドの日の値を返す。
+	 * 作成者：S.Saito
+	 * 作成日：2023.05.01
+	 */
 	public int getDate() {return dayDate;}
 	
-	// 年を入力するセッター
-	public void set(int dayYear) {this.dayYear = dayYear;}
-	// 月を入力するセッター
+	// 各セッター
+	
+	/*
+	 * 関数名：setYear
+	 * 概要：年を入力するセッター。
+	 * 引数：dayYear … フィールドの年の値を変更する。
+	 * 戻り値：なし
+	 * 作成者：S.Saito
+	 * 作成日：2023.05.01
+	 */
+	public void setYear(int dayYear) {this.dayYear = dayYear;}
+	
+	/*
+	 * 関数名：setMonth
+	 * 概要：月を入力するセッター。
+	 * 引数：dayMonth … フィールドの月の値を変更する。
+	 * 戻り値：なし
+	 * 作成者：S.Saito
+	 * 作成日：2023.05.01
+	 */
 	public void setMonth(int dayMonth) {this.dayMonth = dayMonth;}
-	// 日を入力するセッター
+	
+	/*
+	 * 関数名：setDate
+	 * 概要：日を入力するセッター。
+	 * 引数：dayDate … フィールドの日の値を変更する。
+	 * 戻り値：なし
+	 * 作成者：S.Saito
+	 * 作成日：2023.05.01
+	 */
 	public void setDate(int dayDate) {this.dayDate = dayDate;}
 	
+	/*
+	 * 関数名：setDay
+	 * 概要：年月日を同時に入力するセッター。
+	 * 引数：dayYear … フィールドの年の値を変更する。
+	 *       dayMonth … フィールドの月の値を変更する。
+	 *       dayDate … フィールドの日の値を変更する。
+	 * 戻り値：なし
+	 * 作成者：S.Saito
+	 * 作成日：2023.05.01
+	 */
 	// 年月日を同時に入力するセッター
-	public void set(int dayYear,int dayMonth,int dayDate) {
+	public void setDay(int dayYear,int dayMonth,int dayDate) {
 		// 年を入力する。
 		this.dayYear = dayYear;
 		// 月を入力する。
@@ -51,7 +112,15 @@ public class DayClass {
 		this.dayDate = dayDate;
 	}
 	
-	// 年月日の情報から曜日を求めて返す。0が日曜日で6が土曜日となる0～6の値を返す。
+	
+	/*
+	 * 関数名：checkWeek
+	 * 概要：年月日の情報から曜日を求めて、0が日曜日で6が土曜日となる0～6の値を返す。
+	 * 引数：なし
+	 * 戻り値：(計算式) … 年月日の情報をもとに計算された、その日の曜日となる値。
+	 * 作成者：S.Saito
+	 * 作成日：2023.05.01
+	 */
 	public int checkWeek() { 
 		// 年の入力をする。
 		int yearWeek = dayYear;
@@ -68,13 +137,27 @@ public class DayClass {
 		return (yearWeek + yearWeek / 4 - yearWeek / 100 + yearWeek / 400 + (13 * monthWeek + 8) / 5 + dayDate ) % 7;
 	}
 	
-	// 日付dと等しいかを調べる。
+	/*
+	 * 関数名：equalTo
+	 * 概要：日付クラスのフィールドの他の日付dと等しいかを調べる。
+	 * 引数：makeDay … 日付クラスのフィールドで作られた別のインスタンスの日付。
+	 * 戻り値：(計算式) … 年月日それぞれの値を比較し、全て同じならture、一つでも異なるならfalseになる。
+	 * 作成者：S.Saito
+	 * 作成日：2023.05.01
+	 */
 	public boolean equalTo (DayClass makeDay) {
 		// 年月日がすべて同じ場合はture、異なる値があった場合はfalseと返す
 		return dayYear == makeDay.dayYear && dayMonth == makeDay.dayMonth && dayDate == makeDay.dayDate;
 	}
 	
-	// 文字列表現で年月日(曜)を返す。(toStringのメソッド)
+	/*
+	 * 関数名：toString
+	 * 概要：文字列表現で年月日(曜)を返す。曜日はday0fWeekを用いて得た値から適切な文字を表示する。
+	 * 引数：なし
+	 * 戻り値：format … 年月日および曜日の情報を文字列で表したもの。
+	 * 作成者：S.Saito
+	 * 作成日：2023.05.01
+	 */
 	public String toString() {
 		// 各曜日が入った文字の配列をつくる
 		String[] weekWord = {"日","月","火","水","木","金","土"};
