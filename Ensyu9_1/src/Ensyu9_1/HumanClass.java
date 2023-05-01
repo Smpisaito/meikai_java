@@ -59,7 +59,7 @@ public class HumanClass {
 		}
 		
 		/*
-		 * 関数名：pdateHeight
+		 * 関数名：updateHeight
 		 * 概要：身長の情報を新しくする
 		 * 引数：nowHeight … 新しい身長の情報
 		 * 戻り値：なし
