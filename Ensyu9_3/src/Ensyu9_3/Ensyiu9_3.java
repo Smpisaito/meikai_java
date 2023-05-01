@@ -249,7 +249,7 @@ public class Ensyiu9_3 {
 	/*
 	 * 関数名：inputString
 	 * 概要：「(引数の文字)：」と表示し、文字列の入力を求め、その文字列を返却する。
-	 * 引数：なし
+	 * 引数：outputWord … String型の表示に使う文字列
 	 * 戻り値：useString … 文字列として返却する。
 	 * 作成者：S.Saito
 	 * 作成日：2023.04.28
@@ -348,7 +348,7 @@ public class Ensyiu9_3 {
 	 * 概要：文字列で複数選択を求め、選択肢の中で入力された値を返す。最小の選択肢の値は0とする。
 	 * 引数：outputWord … String型の選択肢の表示に使う文字列。
 	 *       selectRange … 選べる値の最大値
-	 * 戻り値：booleanSelect … 選択によってtrueかfalseを返す。
+	 * 戻り値：electNumber … 選択範囲内の選んだ値。
 	 * 作成者：S.Saito
 	 * 作成日：2023.04.28
 	 */
