@@ -1,3 +1,4 @@
+// パッケージの宣言
 package Ensyu9_5;
 
 /*
@@ -18,13 +19,29 @@ public class DayClass {
 	// コンストラクタ、未入力用。
 	public DayClass() {}
 	// コンストラクタ、年までの入力。
-	public DayClass(int dayYear) {this.dayYear = dayYear;}
+	public DayClass(int dayYear) {
+		// 引数を年にいれる。
+		this.dayYear = dayYear;
+	}
 	// コンストラクタ、月までの入力。
-	public DayClass(int dayYear, int dayMonth) {this(dayYear); this.dayMonth = dayMonth;}
+	public DayClass(int dayYear, int dayMonth) {
+		// 年までのコンストラクタの操作と同じ。
+		this(dayYear);
+		// 引数を月に入れる。
+		this.dayMonth = dayMonth;
+	}
 	// コンストラクタ、日までの入力。
-	public DayClass(int dayYear, int dayMonth, int dayDate) {this(dayYear,dayMonth);this.dayDate = dayDate;}
+	public DayClass(int dayYear, int dayMonth, int dayDate) {
+		// 月までのコンストラクタの操作と同じ。
+		this(dayYear,dayMonth);
+		// 引数を日に入れる。
+		this.dayDate = dayDate;
+	}
 	// コンストラクタ、他の年月日のコピー。
-	public DayClass(DayClass makeDay) {this(makeDay.dayYear,makeDay.dayMonth,makeDay.dayDate);}
+	public DayClass(DayClass makeDay) {
+		// クラスの各値をもとにコピーのコンストラクタをつくる。
+		this(makeDay.dayYear,makeDay.dayMonth,makeDay.dayDate);
+	}
 	
 	
 	// 各ゲッター
@@ -37,7 +54,10 @@ public class DayClass {
 	 * 作成者：S.Saito
 	 * 作成日：2023.05.01
 	 */
-	public int getYear() { return dayYear;}
+	public int getYear() { 
+		// 年の値を返す
+		return dayYear;
+	}
 	
 	/*
 	 * 関数名：getMonth
@@ -47,7 +67,10 @@ public class DayClass {
 	 * 作成者：S.Saito
 	 * 作成日：2023.05.01
 	 */
-	public int getMonth() {return dayMonth;}
+	public int getMonth() {
+		// 月の値を返す
+		return dayMonth;
+	}
 	
 	/*
 	 * 関数名：getDate
@@ -57,7 +80,10 @@ public class DayClass {
 	 * 作成者：S.Saito
 	 * 作成日：2023.05.01
 	 */
-	public int getDate() {return dayDate;}
+	public int getDate() {
+		// 日の値を返す。
+		return dayDate;
+	}
 	
 	// 各セッター
 	
@@ -69,7 +95,10 @@ public class DayClass {
 	 * 作成者：S.Saito
 	 * 作成日：2023.05.01
 	 */
-	public void setYear(int dayYear) {this.dayYear = dayYear;}
+	public void setYear(int dayYear) {
+		// 年に値を入力する。
+		this.dayYear = dayYear;
+	}
 	
 	/*
 	 * 関数名：setMonth
@@ -79,7 +108,10 @@ public class DayClass {
 	 * 作成者：S.Saito
 	 * 作成日：2023.05.01
 	 */
-	public void setMonth(int dayMonth) {this.dayMonth = dayMonth;}
+	public void setMonth(int dayMonth) {
+		// 月に値を入力する。
+		this.dayMonth = dayMonth;
+	}
 	
 	/*
 	 * 関数名：setDate
@@ -89,7 +121,10 @@ public class DayClass {
 	 * 作成者：S.Saito
 	 * 作成日：2023.05.01
 	 */
-	public void setDate(int dayDate) {this.dayDate = dayDate;}
+	public void setDate(int dayDate) {
+		// 日に値を入力する。
+		this.dayDate = dayDate;
+	}
 	
 	/*
 	 * 関数名：setDay

@@ -163,13 +163,13 @@ public class Ensyu9_5 {
 				// うるう年なので29日に設定する。
 				lastDate = 29;
 				// 戻り値を返す。
-				return lastDate;
+				break;
 			// 4の倍数ではない、もしくは100の倍数の場合の分岐
 			} else {
 				// うるう年ではないため28日に設定する。
 				lastDate = 28;
 				// 戻り値を返す。
-				return lastDate;
+				break;
 			}
 			
 		// 4月、6月、9月、11月の場合の分岐。
@@ -177,20 +177,22 @@ public class Ensyu9_5 {
 			// 30日に設定する。
 			lastDate = 30;
 			// 戻り値を返す。
-			return lastDate;
+			break;
 			
 		// 1月、3月、5月、7月、8月、10月、12月の場合。
-		case 1: case 3: case 5: case 7: case 10: case 12:
+		case 1: case 3: case 5: case 7: case 8:case 10: case 12:
 			// 31日に設定する。
 			lastDate = 31;
 			// 戻り値を返す。
-			return lastDate;
+			break;
 			
 		// それ以外、月の値がおかしい場合の分岐
 		default :
 			// 戻り値を0のまま返す。
-			return lastDate;
+			break;
 		}
+		// 戻り値を返す。
+		return lastDate;
 	}
 	
 	/*
@@ -211,7 +213,7 @@ public class Ensyu9_5 {
 		// 誕生日の日の入力を求める。
 		int birthDay = inputRange("日",1,lastDate);
 		// 
-		newDay = new DayClass(birthYear,birthMonth,birthDay);
+		newDay.setDay(birthYear,birthMonth,birthDay);
 	}
 	
 	/*
@@ -238,7 +240,7 @@ public class Ensyu9_5 {
 		makeDay(finishDay);
 		
 		// 開始日より終了日のほうが早い日付の場合
-		if (startDay.getYear() > finishDay.getYear() || ( startDay.getYear() == finishDay.getYear() && startDay.getMonth() < finishDay.getMonth() )
+		if (startDay.getYear() > finishDay.getYear() || ( startDay.getYear() == finishDay.getYear() && startDay.getMonth() > finishDay.getMonth() )
 				// if文の条件式の続き
 				|| ( startDay.getYear() == finishDay.getYear() && startDay.getMonth() == finishDay.getMonth() && startDay.getDate() > finishDay.getDate() )) {
 			
@@ -253,6 +255,39 @@ public class Ensyu9_5 {
 			
 			// 開始日と終了日を表示する。
 			System.out.println(newPeriod.toString());
+			
+			// 新しい開始日を用意する。
+			DayClass newStart = new DayClass();
+			// 新しい終了日を用意する。
+			DayClass newFinish = new DayClass();
+			// 開始日の変更を求める。
+			System.out.println("開始日の変更操作の確認してください。");
+			// 新しい開始日を入力する。
+			makeDay(newStart);
+			// 終了日の変更を求める。
+			System.out.println("終了日の変更操作の確認してください。");
+			// 新しい終了日を入力する。
+			makeDay(newFinish);
+			// 開始日より終了日のほうが早い日付の場合
+			if (newStart.getYear() > newFinish.getYear() || ( newStart.getYear() == newFinish.getYear() && newStart.getMonth() > newFinish.getMonth() )
+					// if文の条件式の続き
+					|| ( newStart.getYear() == newFinish.getYear() && newStart.getMonth() == newFinish.getMonth() && newStart.getDate() > newFinish.getDate() )) {
+				
+				// 日付がおかしいことを示す。
+				System.out.println("開始日と終了日が正しくありません。");
+				
+				// 日付が正しい場合
+			} else {
+				// 開始日のセッタの確認
+				newPeriod.setStart(newStart);
+				// 終了日のセッタの確認
+				newPeriod.setFinish(newFinish);
+				
+				// 開始日のセッタの確認
+				System.out.println("開始日：" + newPeriod.getStart());
+				// 終了日のセッタの確認
+				System.out.println("終了日：" + newPeriod.getFinish());
+			}
 		}
 	}
 	
