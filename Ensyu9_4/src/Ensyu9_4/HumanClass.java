@@ -1,3 +1,4 @@
+// パッケージの宣言
 package Ensyu9_4;
 
 /*
@@ -120,8 +121,8 @@ public class HumanClass {
 	
 	/*
 	 * 関数名：setBirth
-	 * 概要：体重の情報のセッター
-	 * 引数：trueBirth … 新しい体重の情報
+	 * 概要：誕生日の情報のセッター
+	 * 引数：trueBirth … 新しい誕生日の情報
 	 * 戻り値：なし
 	 * 作成者：S.Saito
 	 * 作成日：2023.04.28

@@ -1,6 +1,7 @@
 // パッケージの宣言
 package Ensyu9_4;
 
+//入力操作を行うときにクラスの宣言の前に置く。
 import java.util.Scanner;
 
 /*
@@ -285,7 +286,7 @@ public class Ensyu9_4 {
 			return lastDate;
 			
 		// 1月、3月、5月、7月、8月、10月、12月の場合。
-		case 1: case 3: case 5: case 7: case 10: case 12:
+		case 1: case 3: case 5: case 7:case 8: case 10: case 12:
 			// 31日に設定する。
 			lastDate = 31;
 			// 戻り値を返す。
