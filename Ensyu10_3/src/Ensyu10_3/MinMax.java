@@ -55,7 +55,7 @@ public class MinMax {
 	
 	/*
 	 * 関数名：checkLower
-	 * 概要：三つの整数値の小さいほうを返す。
+	 * 概要：配列の一番小さい値を返す。
 	 * 引数：checkArray[] … 最小値を求めたい配列
 	 * 戻り値：lowerNumber … 配列内の整数値の一番低い値
 	 * 作成者：S.Saito
@@ -120,7 +120,7 @@ public class MinMax {
 	
 	/*
 	 * 関数名：checkHigher
-	 * 概要：三つの整数値の大きいほうを返す。
+	 * 概要：配列の一番大きい値を返す。
 	 * 引数：checkArray[] … 最小値を求めたい配列
 	 * 戻り値：higherNumber … 配列内の整数値の一番高い値
 	 * 作成者：S.Saito
