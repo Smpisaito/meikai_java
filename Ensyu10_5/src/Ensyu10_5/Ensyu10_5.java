@@ -295,13 +295,13 @@ public class Ensyu10_5 {
 				// うるう年なので29日に設定する。
 				lastDate = 29;
 				// 戻り値を返す。
-				return lastDate;
+				break;
 			// 4の倍数ではない、もしくは100の倍数の場合の分岐
 			} else {
 				// うるう年ではないため28日に設定する。
 				lastDate = 28;
 				// 戻り値を返す。
-				return lastDate;
+				break;
 			}
 			
 		// 4月、6月、9月、11月の場合の分岐。
@@ -309,20 +309,22 @@ public class Ensyu10_5 {
 			// 30日に設定する。
 			lastDate = 30;
 			// 戻り値を返す。
-			return lastDate;
+			break;
 			
 		// 1月、3月、5月、7月、8月、10月、12月の場合。
-		case 1: case 3: case 5: case 7: case 10: case 12:
+		case 1: case 3: case 5: case 7: case 8:case 10: case 12:
 			// 31日に設定する。
 			lastDate = 31;
 			// 戻り値を返す。
-			return lastDate;
+			break;
 			
 		// それ以外、月の値がおかしい場合の分岐
 		default :
 			// 戻り値を0のまま返す。
-			return lastDate;
+			break;
 		}
+		// 戻り値を返す。
+		return lastDate;
 	}
 	
 	/*
@@ -391,7 +393,7 @@ public class Ensyu10_5 {
 			// 0円であった場合の分岐
 			if (firstMoney == 0) {
 				// 預金せずに口座を開設することを示す。
-				System.out.println("新設口座への預金は中止されました。必要な場合は選択してください。");
+				System.out.println("新設口座への預金は中止されました。預金が必要な場合は選択してください。");
 			}
 			// インスタンスを代入する形でつくる。
 			myAccount = new Account(accountName,accountNumber,firstMoney,new DayClass(accountYear,accountMonth,accountDate));
