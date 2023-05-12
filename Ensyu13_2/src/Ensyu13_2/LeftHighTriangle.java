@@ -1,0 +1,54 @@
+// パッケージの宣言
+package Ensyu13_2;
+
+/*
+ * クラス名：LeftHighTriangle
+ * 概要：直角が左上の直角二等辺三角形
+ * 作成者：S.Saito
+ * 作成日：2023.05.10
+ */
+public class LeftHighTriangle extends TriangleShape {
+
+	// コンストラクト
+	public LeftHighTriangle (int triangleLength) {
+		// 二等辺の辺の長さをいれる
+		super(triangleLength);
+	}
+	
+	/*
+	 * 関数名：toString
+	 * 概要：直角二等辺三角形の二等辺の長さの文字列を返す。
+	 * 引数：なし
+	 * 戻り値：(文字列) "直角二等辺三角形の二等辺の長さ(" + triangleLength + ")" … 直角二等辺三角形の二等辺の長さの文字列
+	 * 作成者：S.Saito
+	 * 作成日：2023.05.10
+	 */
+	public String toString() {
+		// 直角二等辺三角形の二等辺の長さの文字列を返す。
+		return "直角二等辺三角形(二等辺の長さ：" + super.getTriangleLength() + ",直角の位置：左上)";
+	}
+	
+	/*
+	 * 関数名：drawShape
+	 * 概要：左上が直角の直角二等辺三角形をつくる。
+	 * 引数：なし
+	 * 戻り値：なし
+	 * 作成者：S.Saito
+	 * 作成日：2023.05.10
+	 */
+	public void drawShape() {
+		// 辺の回数だけループする
+		for (int firstLoop = 0; firstLoop <  super.getTriangleLength() ;firstLoop++) {
+			// アスタリスクを入れるループをする
+			for (int secondLoop =  super.getTriangleLength(); secondLoop > firstLoop; secondLoop--) {
+				// アステリスクを入れる。
+				System.out.print('*');
+			}
+			// 改行する
+			System.out.println();
+		}
+
+	}
+
+
+}
